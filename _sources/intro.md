@@ -1,27 +1,13 @@
 # Welcome to your Jupyter Book
 
+https://luszngcpbgycfvx8oqwkcv.streamlit.app/
+
+https://muflikhatin.github.io/web-1/intro.html
+
 BOOK LAPORAN PPW
+
 Pastikan dalam editor sudah terinstall library yang dibutuhkan yaitu dengan menjalankan perintah  pip install name_lybrary di editor masing – masing :
 >> untuk crawling data dari web yang akan kita gunakan
-
-import requests
-from bs4 import BeautifulSoup
-import csv
-
->> untuk menjadikan dalam bentuk kalimat 
-import nltk
-from nltk.tokenize import sent_tokenize
-
->> untuk proses menghitung tf-idf
-import math
-from collections import Counter
-import pandas as pd
-
->> digunakan untuk menghitung kesamaan kosinus
-from sklearn.metrics.pairwise import cosine_similarity
-
->> untuk menampilkan dalam bentuk graph
-import matplotlib.pyplot as plt
 
 
 Dalam Materi Kali ini kita akan mengulas tentang :
