@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>TF - IDF &#8212; Pencarian Penambangan Web</title>
+    <title>Crawling Data pada detik.com &#8212; Pencarian Penambangan Web</title>
   
   
   
@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'closeness_centrality';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="Skip_Gram.html" />
+    <link rel="next" title="Crawling Baru PTA" href="Skip_Gram.html" />
     <link rel="prev" title="Tugas 2 Normalisasi text" href="Tugas_2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -171,7 +171,16 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ScrapeDataUTM.html">Tugas 1 Scrape Website pta.trunojoyo.ac.id with Beautiful Soap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tugas_2.html">Tugas 2 Normalisasi text</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">TF - IDF</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Crawling Data pada detik.com</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Skip_Gram.html">Crawling Baru PTA</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="lda.html">TOPIK MODELING</a></li>
 
 
 
@@ -389,7 +398,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TF - IDF</h1>
+    <h1>Crawling Data pada detik.com</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -399,10 +408,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">TF - IDF</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Crawling Data pada detik.com</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf-dalam-kalimat-dan-cosinsemiliarity">TF - IDF Dalam Kalimat dan cosinsemiliarity</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-similarit">Cosine Similarit</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#graph">Graph</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closenes-centrality">Closenes Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-centrality">Eigenvector Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalue-centrality">Eigenvalue Centrality</a></li>
 </ul>
 
             </nav>
@@ -415,7 +427,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="crawling-data-pada-detik-com">
+<h1>Crawling Data pada <a class="reference external" href="http://detik.com">detik.com</a><a class="headerlink" href="#crawling-data-pada-detik-com" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
@@ -567,11 +581,37 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">785</span><span class="s2">         keyfile=key_file,</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/util/ssl_.py</span> in <span class="ni">ssl_wrap_socket</span><span class="nt">(sock, keyfile, certfile, cert_reqs, ca_certs, server_hostname, ssl_version, ciphers, ssl_context, ca_cert_dir, key_password, ca_cert_data, tls_in_tls)</span>
-<span class="g g-Whitespace">    </span><span class="mi">444</span><span class="s2">     if ca_certs or ca_cert_dir or ca_cert_data:</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span><span class="s2">         try:</span>
-<span class="ne">--&gt; </span><span class="mi">446</span><span class="s2">             context.load_verify_locations(ca_certs, ca_cert_dir, ca_cert_data)</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span><span class="s2">         except OSError as e:</span>
-<span class="g g-Whitespace">    </span><span class="mi">448</span><span class="s2">             raise SSLError(e) from e</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="s2">         pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">470</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">471</span><span class="s2">     ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)</span>
+<span class="g g-Whitespace">    </span><span class="mi">472</span><span class="s2">     return ssl_sock</span>
+<span class="g g-Whitespace">    </span><span class="mi">473</span><span class="s2"> </span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/util/ssl_.py</span> in <span class="ni">_ssl_wrap_socket_impl</span><span class="nt">(sock, ssl_context, tls_in_tls, server_hostname)</span>
+<span class="g g-Whitespace">    </span><span class="mi">513</span><span class="s2">         return SSLTransport(sock, ssl_context, server_hostname)</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">515</span><span class="s2">     return ssl_context.wrap_socket(sock, server_hostname=server_hostname)</span>
+
+<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">wrap_socket</span><span class="nt">(self, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, session)</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span><span class="s2">         # SSLSocket class handles server_hostname encoding before it calls</span>
+<span class="g g-Whitespace">    </span><span class="mi">512</span><span class="s2">         # ctx._wrap_socket()</span>
+<span class="ne">--&gt; </span><span class="mi">513</span><span class="s2">         return self.sslsocket_class._create(</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span><span class="s2">             sock=sock,</span>
+<span class="g g-Whitespace">    </span><span class="mi">515</span><span class="s2">             server_side=server_side,</span>
+
+<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">_create</span><span class="nt">(cls, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, context, session)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1069</span><span class="s2">                         # non-blocking</span>
+<span class="g g-Whitespace">   </span><span class="mi">1070</span><span class="s2">                         raise ValueError(&quot;do_handshake_on_connect should not be specified for non-blocking sockets&quot;)</span>
+<span class="ne">-&gt; </span><span class="mi">1071</span><span class="s2">                     self.do_handshake()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1072</span><span class="s2">             except (OSError, ValueError):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1073</span><span class="s2">                 self.close()</span>
+
+<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">do_handshake</span><span class="nt">(self, block)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1340</span><span class="s2">             if timeout == 0.0 and block:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1341</span><span class="s2">                 self.settimeout(None)</span>
+<span class="ne">-&gt; </span><span class="mi">1342</span><span class="s2">             self._sslobj.do_handshake()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1343</span><span class="s2">         finally:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1344</span><span class="s2">             self.settimeout(timeout)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -594,7 +634,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/ppw/detik_results.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/UAS_PPW/tugas/detik_results.csv&#39;</span><span class="p">)</span>
 <span class="n">data</span>
 </pre></div>
 </div>
@@ -1003,8 +1043,14 @@ Requirement already satisfied: smart-open&gt;=1.8.1 in /usr/local/lib/python3.10
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="tf-idf">
-<h1>TF - IDF<a class="headerlink" href="#tf-idf" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tf-idf-dalam-kalimat-dan-cosinsemiliarity">
+<h1>TF - IDF Dalam Kalimat dan cosinsemiliarity<a class="headerlink" href="#tf-idf-dalam-kalimat-dan-cosinsemiliarity" title="Permalink to this heading">#</a></h1>
+<p><img alt="rumus1.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVMAAAB8CAYAAADUxlMjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACYFSURBVHhe7d0FdCvH2cbxCTMzMzMzM0MbLAQaatIwNE0aaKDBJmmapGFmZmZmZmZm5n75zee9Z6Mry5It2da97/8cHduyYHe1+8zzwoyG+N8vpCBoIj/99FP6/vvv03DDDZeGHHLIjnubx3fffZd/ev0g6C+EmAZN5fPPP0+vvPJK/n3aaadNI4wwQv69mbz22mvp448/TmONNVaaZJJJ0hBDDNHxnyDoO0JMg6bx9ttvpwcffDBNPfXU+TbssMN2/Ke5OGU//fTT9MADD6QxxxwzzT333B3/CYK+o/kxWDBY8tlnn6XHHnssTTTRRGm66aZrmZCCEx1jjDHSbLPNll5//fX06KOPZoENgr4kxDToMfKjt9xyS/59zjnnTEMNNVT+vSvKAvjzzz/nWyOiON5446UZZpghPfTQQ+mtt97quDcI+oYI84Mewx2ed955af3118/OtB6++eabdNppp6Vbb701DTPMMGnsscfO9xPUhRZaKLtOOdeu8qE//vhjuvTSS9Poo4+ellhiibqFPAiaTTjToEcQv8cffzzNPPPMAwSxHoYffvi00kor5Wr/OOOMk7beeuu0ww47pLXXXju98cYbaa+99kp33313x6M7Z+ihh05zzDFHdqbvvfdex71B0PuEmAY9gsN88skn04QTTthQqxLHSYix9NJLpymnnDJX5rnSTTbZJOdEjz/++Fy174qJJ544i6kCWBD0FSGmQY9QeBpllFFym1Kj3H///fn5wvkyI488cppiiinSc889l959992OeztHmmDyySdP3377bRSigj4jxDToEa+++moWsUar9xrvb7/99pweqMyzEkSvyenW87pcrsfpb/3hhx867g2C3iXENOgRH3zwQb416gg13nOeCk2Vjf1ynw8//HCaZppp0vjjj99xb22+/PLLnGs1+yoI+oIQ06BPeOaZZ3LhSfGozIcffpjOOeecnDrYcsstc8hfD62YthoEjRBnYJvA+ckvcm1C4Fp4rMJQZyGv/wuz9Yc26ih7ivckpBdeeGF2pIpQ9unpp59OV199dTrwwAPT119/nf7+97/nntX+xPPPP5+u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iGnQdORDrfjENbZC6LhaQuv1G50pFQStIsQ0CIKgCUTONAiCoAmEmAZBEDSBENMgCIImEGIaBEHQBEJMgyAImkCIaRAEQRMIMQ2CIGgCIaZBEARNIMQ0CIKgCYSYBkEQNIEQ0yAIgiYQYhoEQdAEQkyDIAiaQIhpEARBEwgxDYIgaAIhpkEQBE0gxDQIgqAJhJgGQRA0gRDTIAiCJhBiGgRB0ARCTIMgCJpAiGkQBEETCDENgiBoAiGmQRAETSDENAiCoAmEmAZBEDSBENMgCIImEGIaBEHQBEJMgyAImsAQ//uFjt+DIDkdvv/++3wbcsgh088//5x++umnfH9nDDHEEGmooYZKI444Yv4ZBIMjIabBr/jxxx/T9ddfn/7973+n999/P40//vhpyimnTMMMM0yngvrll1+mb775Jm266aZpiSWW6Lg3CAYvQkyDgfj000/T8ccfnw4++OA08sgjp7333jutvvrqadhhh81OtZJ333033XTTTWmsscZKv/3tb/N93377bb7v5Zdfzs+ZYIIJ0rjjjptefPHF9PXXX2fXO//886ePPvooPfvss/kx8803X7414m5fe+21/D4EfbjhhktTTDFFFvbXX389v+Y444yTZpxxxvToo4+mTz75JI022mhphRVWyNsTBM0kcqbBQIw++uhp2223TUcddVQafvjh0wEHHJAuu+yyLIDEtfI29dRTpzXXXDNNNNFEA9zr0EMPnR9/1llnpQsvvDCnALzuAw88kP7zn/9kwSNs77zzTjrmmGOyIHstKYNGsH1vvPFG3sbnn38+CzpOO+20dN111+X3GGGEEdJtt92WLr/88izURDcImk2IaVAVgrPOOutkQfX7rrvumn//7LPPOh7xa8Yee+w0zzzzDBBDYjr33HOnqaaaKi2zzDJp5ZVXzikDz59sssnSuuuumyaccMIsbgcddFDad99906yzzpoFuBHGG2+8NO+88+ZUxNprr53mmmuu/Bqc8VJLLZVdKOGec84503HHHZc22GCDNOaYY3Y8OwiaR4hp0CmEkSAdeeSRabrppksHHnhg+uc//5mdYCUeS0DLfP755zn8nnzyyXNof8MNN+TQe9RRR80O9vzzz88/l19++ZxC6C5vvfVWFtUxxhgjPffcc+mpp55Ko4wySnalL7zwQrrxxhtz+mDaaafteEYQNJ8Q06Am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" /></p>
+<p>MENGHITUNG NILAI TF DAN IDF</p>
+<p>• idf = log (D/df)</p>
+<p>– D = Jumlah Dokumen yang di perbandingkan</p>
+<p>• Wdt = tf * Idf</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
@@ -2211,6 +2257,9 @@ Kalimat: Keduanya sampai di lokasi pukul 07.00 WIB.Sementara Gibran, baru tampak
 </div>
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="eigenvector-centrality">
+<h1>Eigenvector Centrality<a class="headerlink" href="#eigenvector-centrality" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hitung Eigenvector Centrality</span>
@@ -2271,6 +2320,9 @@ Kalimat: Disamperin saja Pak Anies masih di dalam,&quot; tutur Gibran kepada war
 </div>
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="eigenvalue-centrality">
+<h1>Eigenvalue Centrality<a class="headerlink" href="#eigenvalue-centrality" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hitung Eigenvalue Centrality</span>
@@ -2377,7 +2429,7 @@ Kalimat: Disamperin saja Pak Anies masih di dalam,&quot; tutur Gibran kepada war
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Crawling Baru PTA</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2396,10 +2448,13 @@ Kalimat: Disamperin saja Pak Anies masih di dalam,&quot; tutur Gibran kepada war
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">TF - IDF</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Crawling Data pada detik.com</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf-dalam-kalimat-dan-cosinsemiliarity">TF - IDF Dalam Kalimat dan cosinsemiliarity</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-similarit">Cosine Similarit</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#graph">Graph</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closenes-centrality">Closenes Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-centrality">Eigenvector Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalue-centrality">Eigenvalue Centrality</a></li>
 </ul>
 
   </nav></div>
