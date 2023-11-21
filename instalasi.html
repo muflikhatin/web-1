@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ScrapeDataUTM.html">Tugas 1 Scrape Website pta.trunojoyo.ac.id with Beautiful Soap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tugas_2.html">Tugas 2 Normalisasi text</a></li>
-<li class="toctree-l1"><a class="reference internal" href="closeness_centrality.html">Crawling Data pada detik.com</a></li>
+<li class="toctree-l1"><a class="reference internal" href="closeness_centrality.html">Meringkas Dokumen</a></li>
 
 
 
@@ -182,6 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="K_means.html">K- Means dengan TF - IDF</a></li>
 </ul>
 
     </div>
@@ -484,25 +485,41 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jupyter-book in /usr/local/lib/python3.10/dist-packages (0.15.1)
-Requirement already satisfied: click&lt;9,&gt;=7.1 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (8.1.7)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jupyter-book
+  Downloading jupyter_book-0.15.1-py3-none-any.whl (43 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">43.7/43.7 kB</span> <span class=" -Color -Color-Red">1.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: click&lt;9,&gt;=7.1 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (8.1.7)
 Requirement already satisfied: docutils&lt;0.19,&gt;=0.15 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.18.1)
 Requirement already satisfied: Jinja2 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (3.1.2)
 Requirement already satisfied: jsonschema&lt;5 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (4.19.2)
 Requirement already satisfied: linkify-it-py~=2.0.0 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (2.0.2)
-Requirement already satisfied: myst-nb~=0.17.1 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.17.2)
-Requirement already satisfied: pyyaml in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (6.0.1)
+Collecting myst-nb~=0.17.1 (from jupyter-book)
+  Downloading myst_nb-0.17.2-py3-none-any.whl (78 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">78.6/78.6 kB</span> <span class=" -Color -Color-Red">10.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: pyyaml in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (6.0.1)
 Requirement already satisfied: sphinx&lt;6,&gt;=4 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (5.0.2)
-Requirement already satisfied: sphinx-comments in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.0.3)
-Requirement already satisfied: sphinx-copybutton in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.5.2)
-Requirement already satisfied: sphinx-external-toc~=0.3.1 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.3.1)
-Requirement already satisfied: sphinx-jupyterbook-latex~=0.5.2 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.5.2)
-Requirement already satisfied: sphinx-design~=0.3.0 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.3.0)
-Requirement already satisfied: sphinx-thebe~=0.2.0 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.2.1)
-Requirement already satisfied: sphinx-book-theme~=1.0.0 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (1.0.1)
-Requirement already satisfied: sphinx_togglebutton in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.3.2)
-Requirement already satisfied: sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (2.5.0)
-Requirement already satisfied: sphinx-multitoc-numbering~=0.1.3 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.1.3)
+Collecting sphinx-comments (from jupyter-book)
+  Downloading sphinx_comments-0.0.3-py3-none-any.whl (4.6 kB)
+Collecting sphinx-copybutton (from jupyter-book)
+  Downloading sphinx_copybutton-0.5.2-py3-none-any.whl (13 kB)
+Collecting sphinx-external-toc~=0.3.1 (from jupyter-book)
+  Downloading sphinx_external_toc-0.3.1-py3-none-any.whl (26 kB)
+Collecting sphinx-jupyterbook-latex~=0.5.2 (from jupyter-book)
+  Downloading sphinx_jupyterbook_latex-0.5.2-py3-none-any.whl (14 kB)
+Collecting sphinx-design~=0.3.0 (from jupyter-book)
+  Downloading sphinx_design-0.3.0-py3-none-any.whl (2.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.2/2.2 MB</span> <span class=" -Color -Color-Red">22.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hCollecting sphinx-thebe~=0.2.0 (from jupyter-book)
+  Downloading sphinx_thebe-0.2.1-py3-none-any.whl (8.3 kB)
+Collecting sphinx-book-theme~=1.0.0 (from jupyter-book)
+  Downloading sphinx_book_theme-1.0.1-py3-none-any.whl (396 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">396.9/396.9 kB</span> <span class=" -Color -Color-Red">22.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hCollecting sphinx_togglebutton (from jupyter-book)
+  Downloading sphinx_togglebutton-0.3.2-py3-none-any.whl (8.2 kB)
+Collecting sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0 (from jupyter-book)
+  Downloading sphinxcontrib_bibtex-2.5.0-py3-none-any.whl (39 kB)
+Collecting sphinx-multitoc-numbering~=0.1.3 (from jupyter-book)
+  Downloading sphinx_multitoc_numbering-0.1.3-py3-none-any.whl (4.6 kB)
 Requirement already satisfied: attrs&gt;=22.2.0 in /usr/local/lib/python3.10/dist-packages (from jsonschema&lt;5-&gt;jupyter-book) (23.1.0)
 Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /usr/local/lib/python3.10/dist-packages (from jsonschema&lt;5-&gt;jupyter-book) (2023.7.1)
 Requirement already satisfied: referencing&gt;=0.28.4 in /usr/local/lib/python3.10/dist-packages (from jsonschema&lt;5-&gt;jupyter-book) (0.30.2)
@@ -510,10 +527,13 @@ Requirement already satisfied: rpds-py&gt;=0.7.1 in /usr/local/lib/python3.10/di
 Requirement already satisfied: uc-micro-py in /usr/local/lib/python3.10/dist-packages (from linkify-it-py~=2.0.0-&gt;jupyter-book) (1.0.2)
 Requirement already satisfied: importlib_metadata in /usr/local/lib/python3.10/dist-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (6.8.0)
 Requirement already satisfied: ipython in /usr/local/lib/python3.10/dist-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (7.34.0)
-Requirement already satisfied: jupyter-cache&lt;0.7,&gt;=0.5 in /usr/local/lib/python3.10/dist-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (0.6.1)
-Requirement already satisfied: nbclient in /usr/local/lib/python3.10/dist-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (0.7.4)
-Requirement already satisfied: myst-parser~=0.18.0 in /usr/local/lib/python3.10/dist-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (0.18.1)
-Requirement already satisfied: nbformat~=5.0 in /usr/local/lib/python3.10/dist-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (5.9.2)
+Collecting jupyter-cache&lt;0.7,&gt;=0.5 (from myst-nb~=0.17.1-&gt;jupyter-book)
+  Downloading jupyter_cache-0.6.1-py3-none-any.whl (33 kB)
+Requirement already satisfied: nbclient in /usr/local/lib/python3.10/dist-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (0.9.0)
+Collecting myst-parser~=0.18.0 (from myst-nb~=0.17.1-&gt;jupyter-book)
+  Downloading myst_parser-0.18.1-py3-none-any.whl (58 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">58.2/58.2 kB</span> <span class=" -Color -Color-Red">7.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: nbformat~=5.0 in /usr/local/lib/python3.10/dist-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (5.9.2)
 Requirement already satisfied: typing-extensions in /usr/local/lib/python3.10/dist-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (4.5.0)
 Requirement already satisfied: ipykernel in /usr/local/lib/python3.10/dist-packages (from myst-nb~=0.17.1-&gt;jupyter-book) (5.5.6)
 Requirement already satisfied: sphinxcontrib-applehelp in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (1.0.7)
@@ -530,23 +550,37 @@ Requirement already satisfied: imagesize in /usr/local/lib/python3.10/dist-packa
 Requirement already satisfied: requests&gt;=2.5.0 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2.31.0)
 Requirement already satisfied: packaging in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;6,&gt;=4-&gt;jupyter-book) (23.2)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.10/dist-packages (from Jinja2-&gt;jupyter-book) (2.1.3)
-Requirement already satisfied: pydata-sphinx-theme&gt;=0.13.3 in /usr/local/lib/python3.10/dist-packages (from sphinx-book-theme~=1.0.0-&gt;jupyter-book) (0.14.3)
-Requirement already satisfied: pybtex&gt;=0.24 in /usr/local/lib/python3.10/dist-packages (from sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book) (0.24.0)
-Requirement already satisfied: pybtex-docutils&gt;=1.0.0 in /usr/local/lib/python3.10/dist-packages (from sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book) (1.0.3)
+Collecting pydata-sphinx-theme&gt;=0.13.3 (from sphinx-book-theme~=1.0.0-&gt;jupyter-book)
+  Downloading pydata_sphinx_theme-0.14.3-py3-none-any.whl (4.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.7/4.7 MB</span> <span class=" -Color -Color-Red">34.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hCollecting pybtex&gt;=0.24 (from sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book)
+  Downloading pybtex-0.24.0-py2.py3-none-any.whl (561 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">561.4/561.4 kB</span> <span class=" -Color -Color-Red">49.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hCollecting pybtex-docutils&gt;=1.0.0 (from sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book)
+  Downloading pybtex_docutils-1.0.3-py3-none-any.whl (6.4 kB)
 Requirement already satisfied: setuptools in /usr/local/lib/python3.10/dist-packages (from sphinx_togglebutton-&gt;jupyter-book) (67.7.2)
 Requirement already satisfied: wheel in /usr/local/lib/python3.10/dist-packages (from sphinx_togglebutton-&gt;jupyter-book) (0.41.3)
-Requirement already satisfied: sqlalchemy&lt;3,&gt;=1.3.12 in /usr/local/lib/python3.10/dist-packages (from jupyter-cache&lt;0.7,&gt;=0.5-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (2.0.23)
+Collecting nbclient (from myst-nb~=0.17.1-&gt;jupyter-book)
+  Downloading nbclient-0.7.4-py3-none-any.whl (73 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">73.1/73.1 kB</span> <span class=" -Color -Color-Red">9.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: sqlalchemy&lt;3,&gt;=1.3.12 in /usr/local/lib/python3.10/dist-packages (from jupyter-cache&lt;0.7,&gt;=0.5-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (2.0.23)
 Requirement already satisfied: tabulate in /usr/local/lib/python3.10/dist-packages (from jupyter-cache&lt;0.7,&gt;=0.5-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.9.0)
-Requirement already satisfied: markdown-it-py&lt;3.0.0,&gt;=1.0.0 in /usr/local/lib/python3.10/dist-packages (from myst-parser~=0.18.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (2.2.0)
-Requirement already satisfied: mdit-py-plugins~=0.3.1 in /usr/local/lib/python3.10/dist-packages (from myst-parser~=0.18.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.3.5)
-Requirement already satisfied: jupyter-client&gt;=6.1.12 in /usr/local/lib/python3.10/dist-packages (from nbclient-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (6.1.12)
+Collecting markdown-it-py&lt;3.0.0,&gt;=1.0.0 (from myst-parser~=0.18.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book)
+  Downloading markdown_it_py-2.2.0-py3-none-any.whl (84 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">84.5/84.5 kB</span> <span class=" -Color -Color-Red">13.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hCollecting mdit-py-plugins~=0.3.1 (from myst-parser~=0.18.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book)
+  Downloading mdit_py_plugins-0.3.5-py3-none-any.whl (52 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">52.1/52.1 kB</span> <span class=" -Color -Color-Red">6.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: jupyter-client&gt;=6.1.12 in /usr/local/lib/python3.10/dist-packages (from nbclient-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (6.1.12)
 Requirement already satisfied: jupyter-core!=5.0.*,&gt;=4.12 in /usr/local/lib/python3.10/dist-packages (from nbclient-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (5.5.0)
 Requirement already satisfied: traitlets&gt;=5.3 in /usr/local/lib/python3.10/dist-packages (from nbclient-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (5.7.1)
 Requirement already satisfied: fastjsonschema in /usr/local/lib/python3.10/dist-packages (from nbformat~=5.0-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (2.18.1)
-Requirement already satisfied: latexcodec&gt;=1.0.4 in /usr/local/lib/python3.10/dist-packages (from pybtex&gt;=0.24-&gt;sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book) (2.0.1)
+Collecting latexcodec&gt;=1.0.4 (from pybtex&gt;=0.24-&gt;sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book)
+  Downloading latexcodec-2.0.1-py2.py3-none-any.whl (18 kB)
 Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (from pybtex&gt;=0.24-&gt;sphinxcontrib-bibtex&lt;=2.5.0,&gt;=2.2.0-&gt;jupyter-book) (1.16.0)
 Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.10/dist-packages (from pydata-sphinx-theme&gt;=0.13.3-&gt;sphinx-book-theme~=1.0.0-&gt;jupyter-book) (4.11.2)
-Requirement already satisfied: accessible-pygments in /usr/local/lib/python3.10/dist-packages (from pydata-sphinx-theme&gt;=0.13.3-&gt;sphinx-book-theme~=1.0.0-&gt;jupyter-book) (0.0.4)
+Collecting accessible-pygments (from pydata-sphinx-theme&gt;=0.13.3-&gt;sphinx-book-theme~=1.0.0-&gt;jupyter-book)
+  Downloading accessible_pygments-0.0.4-py2.py3-none-any.whl (29 kB)
 Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.5.0-&gt;sphinx&lt;6,&gt;=4-&gt;jupyter-book) (3.3.2)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.5.0-&gt;sphinx&lt;6,&gt;=4-&gt;jupyter-book) (3.4)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.5.0-&gt;sphinx&lt;6,&gt;=4-&gt;jupyter-book) (2.0.7)
@@ -554,8 +588,10 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.1
 Requirement already satisfied: zipp&gt;=0.5 in /usr/local/lib/python3.10/dist-packages (from importlib_metadata-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (3.17.0)
 Requirement already satisfied: ipython-genutils in /usr/local/lib/python3.10/dist-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.2.0)
 Requirement already satisfied: tornado&gt;=4.2 in /usr/local/lib/python3.10/dist-packages (from ipykernel-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (6.3.2)
-Requirement already satisfied: jedi&gt;=0.16 in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.19.1)
-Requirement already satisfied: decorator in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (4.4.2)
+Collecting jedi&gt;=0.16 (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book)
+  Downloading jedi-0.19.1-py2.py3-none-any.whl (1.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.6/1.6 MB</span> <span class=" -Color -Color-Red">70.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: decorator in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (4.4.2)
 Requirement already satisfied: pickleshare in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.7.5)
 Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (3.0.39)
 Requirement already satisfied: backcall in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.2.0)
@@ -570,6 +606,20 @@ Requirement already satisfied: ptyprocess&gt;=0.5 in /usr/local/lib/python3.10/d
 Requirement already satisfied: wcwidth in /usr/local/lib/python3.10/dist-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (0.2.9)
 Requirement already satisfied: greenlet!=0.4.17 in /usr/local/lib/python3.10/dist-packages (from sqlalchemy&lt;3,&gt;=1.3.12-&gt;jupyter-cache&lt;0.7,&gt;=0.5-&gt;myst-nb~=0.17.1-&gt;jupyter-book) (3.0.1)
 Requirement already satisfied: soupsieve&gt;1.2 in /usr/local/lib/python3.10/dist-packages (from beautifulsoup4-&gt;pydata-sphinx-theme&gt;=0.13.3-&gt;sphinx-book-theme~=1.0.0-&gt;jupyter-book) (2.5)
+Installing collected packages: markdown-it-py, latexcodec, jedi, accessible-pygments, pybtex, mdit-py-plugins, pybtex-docutils, nbclient, jupyter-cache, pydata-sphinx-theme, myst-parser, sphinxcontrib-bibtex, sphinx_togglebutton, sphinx-thebe, sphinx-multitoc-numbering, sphinx-jupyterbook-latex, sphinx-external-toc, sphinx-design, sphinx-copybutton, sphinx-comments, sphinx-book-theme, myst-nb, jupyter-book
+  Attempting uninstall: markdown-it-py
+    Found existing installation: markdown-it-py 3.0.0
+    Uninstalling markdown-it-py-3.0.0:
+      Successfully uninstalled markdown-it-py-3.0.0
+  Attempting uninstall: mdit-py-plugins
+    Found existing installation: mdit-py-plugins 0.4.0
+    Uninstalling mdit-py-plugins-0.4.0:
+      Successfully uninstalled mdit-py-plugins-0.4.0
+  Attempting uninstall: nbclient
+    Found existing installation: nbclient 0.9.0
+    Uninstalling nbclient-0.9.0:
+      Successfully uninstalled nbclient-0.9.0
+Successfully installed accessible-pygments-0.0.4 jedi-0.19.1 jupyter-book-0.15.1 jupyter-cache-0.6.1 latexcodec-2.0.1 markdown-it-py-2.2.0 mdit-py-plugins-0.3.5 myst-nb-0.17.2 myst-parser-0.18.1 nbclient-0.7.4 pybtex-0.24.0 pybtex-docutils-1.0.3 pydata-sphinx-theme-0.14.3 sphinx-book-theme-1.0.1 sphinx-comments-0.0.3 sphinx-copybutton-0.5.2 sphinx-design-0.3.0 sphinx-external-toc-0.3.1 sphinx-jupyterbook-latex-0.5.2 sphinx-multitoc-numbering-0.1.3 sphinx-thebe-0.2.1 sphinx_togglebutton-0.3.2 sphinxcontrib-bibtex-2.5.0
 </pre></div>
 </div>
 </div>
@@ -615,10 +665,7 @@ FileExistsError: [Errno 17] File exists: &#39;tugas&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Usage: jupyter-book build [OPTIONS] PATH_SOURCE
-Try &#39;jupyter-book build -h&#39; for help.
-
-Error: Invalid value for &#39;PATH_SOURCE&#39;: Path &#39;tugas/&#39; does not exist.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: line 1: jupyter-book: command not found
 </pre></div>
 </div>
 </div>
@@ -638,7 +685,8 @@ Error: Invalid value for &#39;PATH_SOURCE&#39;: Path &#39;tugas/&#39; does not e
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git<span class="w"> </span>init
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#tidak perlu</span>
+<span class="o">!</span>git<span class="w"> </span>init
 </pre></div>
 </div>
 </div>
@@ -655,20 +703,10 @@ Error: Invalid value for &#39;PATH_SOURCE&#39;: Path &#39;tugas/&#39; does not e
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;datamaining&#39;...
-remote: Enumerating objects: 7, done.
-remote: Counting objects: 100% (7/7), done.
-remote: Compressing objects: 100% (4/4), done.
-remote: Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
-Unpacking objects: 100% (7/7), done.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_token</span><span class="o">=</span><span class="s1">&#39;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&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_token</span><span class="o">=</span><span class="s1">&#39;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&#39;</span>
 <span class="n">repository</span><span class="o">=</span><span class="s1">&#39;web-1&#39;</span>
 <span class="n">username</span><span class="o">=</span><span class="s1">&#39;muflikhatin&#39;</span>
 </pre></div>
@@ -677,7 +715,35 @@ Unpacking objects: 100% (7/7), done.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://muflikhatin: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@github.com/muflikhatin/web-1.git
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;muflikhatinnisaadah@gmail.com&quot;</span><span class="w">  </span>#<span class="w"> </span>Ganti<span class="w"> </span>dengan<span class="w"> </span>email<span class="w"> </span>GitHub<span class="w"> </span>Anda
+<span class="o">!</span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;muflikhatin&quot;</span><span class="w">       </span>#<span class="w"> </span>Ganti<span class="w"> </span>dengan<span class="w"> </span>username<span class="w"> </span>GitHub<span class="w"> </span>Anda
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>https://muflikhatin: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@github.com/muflikhatin/web-1.git
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git<span class="w"> </span>remote<span class="w"> </span>-v
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>origin	https://muflikhatin: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@github.com/muflikhatin/web-1.git (fetch)
+origin	https://muflikhatin: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@github.com/muflikhatin/web-1.git (push)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://muflikhatin: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@github.com/muflikhatin/web-1.git
 </pre></div>
 </div>
 </div>
@@ -694,15 +760,17 @@ Unpacking objects: 100% (7/7), done.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>filter.lfs.smudge=git-lfs smudge -- %f
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
 filter.lfs.process=git-lfs filter-process
 filter.lfs.required=true
-filter.lfs.clean=git-lfs clean -- %f
+user.email=muflikhatinnisaadah@gmail.com
+user.name=muflikhatin
 core.repositoryformatversion=0
 core.filemode=true
 core.bare=false
 core.logallrefupdates=true
-remote.origin.url=https://muflikhatin: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@github.com/muflikhatin/web-1.git
+remote.origin.url=https://muflikhatin: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@github.com/muflikhatin/web-1.git
 remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
 </pre></div>
 </div>
@@ -716,9 +784,12 @@ remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ghp-import in /usr/local/lib/python3.10/dist-packages (2.1.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ghp-import
+  Downloading ghp_import-2.1.0-py3-none-any.whl (11 kB)
 Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.10/dist-packages (from ghp-import) (2.8.2)
 Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil&gt;=2.8.1-&gt;ghp-import) (1.16.0)
+Installing collected packages: ghp-import
+Successfully installed ghp-import-2.1.0
 </pre></div>
 </div>
 </div>
@@ -762,38 +833,73 @@ parsing bibtex file /content/drive/MyDrive/UAS_PPW/tugas/references.bib... parse
 <span class=" -Color -Color-Bold">myst-nb v0.17.2:</span> NbParserConfig(custom_formats={}, metadata_key=&#39;mystnb&#39;, cell_metadata_key=&#39;mystnb&#39;, kernel_rgx_aliases={}, execution_mode=&#39;force&#39;, execution_cache_path=&#39;&#39;, execution_excludepatterns=[], execution_timeout=30, execution_in_temp=False, execution_allow_errors=False, execution_raise_on_error=False, execution_show_tb=False, merge_streams=False, render_plugin=&#39;default&#39;, remove_code_source=False, remove_code_outputs=False, code_prompt_show=&#39;Show code cell {type}&#39;, code_prompt_hide=&#39;Hide code cell {type}&#39;, number_source_lines=False, output_stderr=&#39;show&#39;, render_text_lexer=&#39;myst-ansi&#39;, render_error_lexer=&#39;ipythontb&#39;, render_image_options={}, render_figure_options={}, render_markdown_format=&#39;commonmark&#39;, output_folder=&#39;build&#39;, append_css=True, metadata_to_fm=False)
 Using jupyter-cache at: /content/drive/MyDrive/UAS_PPW/tugas/_build/.jupyter_cache
 <span class=" -Color -Color-Bold">building [mo]: </span>targets for 0 po files that are out of date
-<span class=" -Color -Color-Bold">building [html]: </span>targets for 7 source files that are out of date
-<span class=" -Color -Color-Bold">updating environment: </span>[new config] 7 added, 0 changed, 0 removed
+<span class=" -Color -Color-Bold">building [html]: </span>targets for 12 source files that are out of date
+<span class=" -Color -Color-Bold">updating environment: </span>[new config] 12 added, 0 changed, 0 removed
+/content/drive/MyDrive/UAS_PPW/tugas/K_means.ipynb: Executing notebook using local CWD [mystnb]
+/content/drive/MyDrive/UAS_PPW/tugas/LDA__KNN__KMEANS.ipynb: Executing notebook using local CWD [mystnb]
 /content/drive/MyDrive/UAS_PPW/tugas/ScrapeDataUTM.ipynb: Executing notebook using local CWD [mystnb]
+/content/drive/MyDrive/UAS_PPW/tugas/Skip_Gram.ipynb: Executing notebook using local CWD [mystnb]
 /content/drive/MyDrive/UAS_PPW/tugas/Tugas_2.ipynb: Executing notebook using local CWD [mystnb]
 /content/drive/MyDrive/UAS_PPW/tugas/closeness_centrality.ipynb: Executing notebook using local CWD [mystnb]
+/content/drive/MyDrive/UAS_PPW/tugas/instalasi.ipynb: Executing notebook using local CWD [mystnb]
+/content/drive/MyDrive/UAS_PPW/tugas/lda.ipynb: Executing notebook using local CWD [mystnb]
 /content/drive/MyDrive/UAS_PPW/tugas/markdown-notebooks.md: Executing notebook using local CWD [mystnb]
-/content/drive/MyDrive/UAS_PPW/tugas/markdown-notebooks.md: Executed notebook in 1.50 seconds [mystnb]
+/content/drive/MyDrive/UAS_PPW/tugas/markdown-notebooks.md: Executed notebook in 1.81 seconds [mystnb]
 /content/drive/MyDrive/UAS_PPW/tugas/notebooks.ipynb: Executing notebook using local CWD [mystnb]
-/content/drive/MyDrive/UAS_PPW/tugas/notebooks.ipynb: Executed notebook in 1.98 seconds [mystnb]
+/content/drive/MyDrive/UAS_PPW/tugas/notebooks.ipynb: Executed notebook in 4.02 seconds [mystnb]
 
+/content/drive/MyDrive/UAS_PPW/tugas/K_means.ipynb: WARNING: Executing notebook failed: CellTimeoutError [mystnb.exec]
+/content/drive/MyDrive/UAS_PPW/tugas/K_means.ipynb: WARNING: Notebook exception traceback saved in: /content/drive/MyDrive/UAS_PPW/tugas/_build/html/reports/K_means.err.log [mystnb.exec]
+/content/drive/MyDrive/UAS_PPW/tugas/LDA__KNN__KMEANS.ipynb: WARNING: Executing notebook failed: CellTimeoutError [mystnb.exec]
+/content/drive/MyDrive/UAS_PPW/tugas/LDA__KNN__KMEANS.ipynb: WARNING: Notebook exception traceback saved in: /content/drive/MyDrive/UAS_PPW/tugas/_build/html/reports/LDA__KNN__KMEANS.err.log [mystnb.exec]
 /content/drive/MyDrive/UAS_PPW/tugas/ScrapeDataUTM.ipynb: WARNING: Executing notebook failed: CellTimeoutError [mystnb.exec]
 /content/drive/MyDrive/UAS_PPW/tugas/ScrapeDataUTM.ipynb: WARNING: Notebook exception traceback saved in: /content/drive/MyDrive/UAS_PPW/tugas/_build/html/reports/ScrapeDataUTM.err.log [mystnb.exec]
+/content/drive/MyDrive/UAS_PPW/tugas/Skip_Gram.ipynb: WARNING: Executing notebook failed: CellTimeoutError [mystnb.exec]
+/content/drive/MyDrive/UAS_PPW/tugas/Skip_Gram.ipynb: WARNING: Notebook exception traceback saved in: /content/drive/MyDrive/UAS_PPW/tugas/_build/html/reports/Skip_Gram.err.log [mystnb.exec]
 /content/drive/MyDrive/UAS_PPW/tugas/Tugas_2.ipynb: WARNING: Executing notebook failed: CellTimeoutError [mystnb.exec]
 /content/drive/MyDrive/UAS_PPW/tugas/Tugas_2.ipynb: WARNING: Notebook exception traceback saved in: /content/drive/MyDrive/UAS_PPW/tugas/_build/html/reports/Tugas_2.err.log [mystnb.exec]
 /content/drive/MyDrive/UAS_PPW/tugas/closeness_centrality.ipynb: WARNING: Executing notebook failed: CellTimeoutError [mystnb.exec]
 /content/drive/MyDrive/UAS_PPW/tugas/closeness_centrality.ipynb: WARNING: Notebook exception traceback saved in: /content/drive/MyDrive/UAS_PPW/tugas/_build/html/reports/closeness_centrality.err.log [mystnb.exec]
+/content/drive/MyDrive/UAS_PPW/tugas/instalasi.ipynb: WARNING: Executing notebook failed: CellTimeoutError [mystnb.exec]
+/content/drive/MyDrive/UAS_PPW/tugas/instalasi.ipynb: WARNING: Notebook exception traceback saved in: /content/drive/MyDrive/UAS_PPW/tugas/_build/html/reports/instalasi.err.log [mystnb.exec]
+/content/drive/MyDrive/UAS_PPW/tugas/intro.md:: WARNING: toctree contains reference to nonexisting document &#39;LDA_KNN_KMEANS&#39; [etoc.ref]
+/content/drive/MyDrive/UAS_PPW/tugas/lda.ipynb: WARNING: Executing notebook failed: CellTimeoutError [mystnb.exec]
+/content/drive/MyDrive/UAS_PPW/tugas/lda.ipynb:140002: WARNING: skipping unknown output mime type: application/vnd.google.colaboratory.intrinsic+json [mystnb.unknown_mime_type]
+/content/drive/MyDrive/UAS_PPW/tugas/lda.ipynb:140002: WARNING: skipping unknown output mime type: application/vnd.google.colaboratory.intrinsic+json [mystnb.unknown_mime_type]
+/content/drive/MyDrive/UAS_PPW/tugas/lda.ipynb:140002: WARNING: skipping unknown output mime type: application/vnd.google.colaboratory.intrinsic+json [mystnb.unknown_mime_type]
+/content/drive/MyDrive/UAS_PPW/tugas/lda.ipynb: WARNING: Notebook exception traceback saved in: /content/drive/MyDrive/UAS_PPW/tugas/_build/html/reports/lda.err.log [mystnb.exec]
 <span class=" -Color -Color-Bold">looking for now-outdated files... </span>none found
 <span class=" -Color -Color-Bold">pickling environment... </span>done
-<span class=" -Color -Color-Bold">checking consistency... </span>/content/drive/MyDrive/UAS_PPW/tugas/markdown.md: WARNING: document isn&#39;t included in any toctree
+<span class=" -Color -Color-Bold">checking consistency... </span>/content/drive/MyDrive/UAS_PPW/tugas/LDA__KNN__KMEANS.ipynb: WARNING: document isn&#39;t included in any toctree
+/content/drive/MyDrive/UAS_PPW/tugas/instalasi.ipynb: WARNING: document isn&#39;t included in any toctree
+/content/drive/MyDrive/UAS_PPW/tugas/markdown.md: WARNING: document isn&#39;t included in any toctree
 /content/drive/MyDrive/UAS_PPW/tugas/markdown-notebooks.md: WARNING: document isn&#39;t included in any toctree
 /content/drive/MyDrive/UAS_PPW/tugas/notebooks.ipynb: WARNING: document isn&#39;t included in any toctree
 done
 <span class=" -Color -Color-Bold">preparing documents... </span>done
-<span class=" -Color -Color-Bold">writing output... </span>[100%] <span class=" -Color -Color-Green">notebooks</span>
-<span class=" -Color -Color-Bold">generating indices... </span>genindex done
-<span class=" -Color -Color-Bold">writing additional pages... </span>search done
+
+/content/drive/MyDrive/UAS_PPW/tugas/intro.md:1: WARNING: toctree contains reference to document &#39;K_means&#39; that doesn&#39;t have a title: no link will be generated
+/content/drive/MyDrive/UAS_PPW/tugas/intro.md:1: WARNING: toctree contains reference to document &#39;K_means&#39; that doesn&#39;t have a title: no link will be generated
+/content/drive/MyDrive/UAS_PPW/tugas/intro.md:1: WARNING: toctree contains reference to document &#39;K_means&#39; that doesn&#39;t have a title: no link will be generated
+/content/drive/MyDrive/UAS_PPW/tugas/intro.md:1: WARNING: toctree contains reference to document &#39;K_means&#39; that doesn&#39;t have a title: no link will be generated
+/content/drive/MyDrive/UAS_PPW/tugas/intro.md:1: WARNING: toctree contains reference to document &#39;K_means&#39; that doesn&#39;t have a title: no link will be generated
+/content/drive/MyDrive/UAS_PPW/tugas/intro.md:1: WARNING: toctree contains reference to document &#39;K_means&#39; that doesn&#39;t have a title: no link will be generated
+/content/drive/MyDrive/UAS_PPW/tugas/intro.md:1: WARNING: toctree contains reference to document &#39;K_means&#39; that doesn&#39;t have a title: no link will be generated
+/content/drive/MyDrive/UAS_PPW/tugas/intro.md:1: WARNING: toctree contains reference to document &#39;K_means&#39; that doesn&#39;t have a title: no link will be generated
+/content/drive/MyDrive/UAS_PPW/tugas/intro.md:1: WARNING: toctree contains reference to document &#39;K_means&#39; that doesn&#39;t have a title: no link will be generated
+/content/drive/MyDrive/UAS_PPW/tugas/intro.md:1: WARNING: toctree contains reference to document &#39;K_means&#39; that doesn&#39;t have a title: no link will be generated
+/content/drive/MyDrive/UAS_PPW/tugas/intro.md:1: WARNING: toctree contains reference to document &#39;K_means&#39; that doesn&#39;t have a title: no link will be generated
+/content/drive/MyDrive/UAS_PPW/tugas/intro.md:1: WARNING: toctree contains reference to document &#39;K_means&#39; that doesn&#39;t have a title: no link will be generated
+<span class=" -Color -Color-Bold">generating indices... </span>genindex /content/drive/MyDrive/UAS_PPW/tugas/intro.md:1: WARNING: toctree contains reference to document &#39;K_means&#39; that doesn&#39;t have a title: no link will be generated
+done
+<span class=" -Color -Color-Bold">writing additional pages... </span>search /content/drive/MyDrive/UAS_PPW/tugas/intro.md:1: WARNING: toctree contains reference to document &#39;K_means&#39; that doesn&#39;t have a title: no link will be generated
+done
 <span class=" -Color -Color-Bold">copying images... </span>[100%] <span class=" -Color -Color-Yellow">_build/jupyter_execute/9fdd49160ba4b72ea5f70519589c2621330484f0a3839431a2d627cb3184be06.png</span>
 <span class=" -Color -Color-Bold">copying static files... </span>done
 <span class=" -Color -Color-Bold">copying extra files... </span>done
 <span class=" -Color -Color-Bold">dumping search index in English (code: en)... </span>done
 <span class=" -Color -Color-Bold">dumping object inventory... </span>done
-<span class=" -Color -Color-Bold">build succeeded, 9 warnings.</span>
+<span class=" -Color -Color-Bold">build succeeded, 39 warnings.</span>
 
 The HTML pages are in tugas/_build/html.
 
@@ -832,56 +938,7 @@ Or paste this line directly into your browser bar:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enumerating objects: 41, done.
-Counting objects:   2% (1/41)
-Counting objects:   4% (2/41)
-Counting objects:   7% (3/41)
-Counting objects:   9% (4/41)
-Counting objects:  12% (5/41)
-Counting objects:  14% (6/41)
-Counting objects:  17% (7/41)
-Counting objects:  19% (8/41)
-Counting objects:  21% (9/41)
-Counting objects:  24% (10/41)
-Counting objects:  26% (11/41)
-Counting objects:  29% (12/41)
-Counting objects:  31% (13/41)
-Counting objects:  34% (14/41)
-Counting objects:  36% (15/41)
-Counting objects:  39% (16/41)
-Counting objects:  41% (17/41)
-Counting objects:  43% (18/41)
-Counting objects:  46% (19/41)
-Counting objects:  48% (20/41)
-Counting objects:  51% (21/41)
-Counting objects:  53% (22/41)
-Counting objects:  56% (23/41)
-Counting objects:  58% (24/41)
-Counting objects:  60% (25/41)
-Counting objects:  63% (26/41)
-Counting objects:  65% (27/41)
-Counting objects:  68% (28/41)
-Counting objects:  70% (29/41)
-Counting objects:  73% (30/41)
-Counting objects:  75% (31/41)
-Counting objects:  78% (32/41)
-Counting objects:  80% (33/41)
-Counting objects:  82% (34/41)
-Counting objects:  85% (35/41)
-Counting objects:  87% (36/41)
-Counting objects:  90% (37/41)
-Counting objects:  92% (38/41)
-Counting objects:  95% (39/41)
-Counting objects:  97% (40/41)
-Counting objects: 100% (41/41)
-Counting objects: 100% (41/41), done.
-Delta compression using up to 2 threads
-Compressing objects: 100% (27/27), done.
-Writing objects: 100% (27/27), 1.28 MiB | 2.68 MiB/s, done.
-Total 27 (delta 12), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (12/12), completed with 6 local objects.
-To https://github.com/muflikhatin/web-1.git
-   e88a121..e7110f5  gh-pages -&gt; gh-pages
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: line 1: ghp-import: command not found
 </pre></div>
 </div>
 </div>
