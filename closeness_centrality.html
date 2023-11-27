@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'closeness_centrality';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -139,6 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -172,6 +175,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ScrapeDataUTM.html">Tugas 1 Scrape Website pta.trunojoyo.ac.id with Beautiful Soap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tugas_2.html">Tugas 2 Normalisasi text</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Meringkas Dokumen</a></li>
+
+
+
+
+
+
+
+
 
 
 
@@ -369,6 +380,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -378,6 +390,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -410,10 +423,18 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Meringkas Dokumen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#crawling-web-dari-detik-com">CRAWLING WEB Dari DETIK.COM</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#search-kalimat-penting-dalam-berita">Search Kalimat penting Dalam Berita</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf-dalam-kalimat-dan-cosinsemiliarity">TF - IDF Dalam Kalimat dan cosinsemiliarity</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-similarit">Cosine Similarit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-tf-idf">Formula TF-IDF</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-similarity">Cosine Similarity</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-cosim">Formula Cosim</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#graph">Graph</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closenes-centrality">Closenes Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-page-rank">FORMULA PAGE RANK</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-exel">Perhitungan EXEL</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-pagerank">Code Pagerank</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hitungan-manual-untuk-pgerank">Hitungan Manual Untuk PgeRank</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-centrality">Eigenvector Centrality</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalue-centrality">Eigenvalue Centrality</a></li>
 </ul>
@@ -431,6 +452,13 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="meringkas-dokumen">
 <h1>Meringkas Dokumen<a class="headerlink" href="#meringkas-dokumen" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="https://luszngcpbgycfvx8oqwkcv.streamlit.app/">https://luszngcpbgycfvx8oqwkcv.streamlit.app/</a></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="crawling-web-dari-detik-com">
+<h1>CRAWLING WEB Dari <a class="reference external" href="http://DETIK.COM">DETIK.COM</a><a class="headerlink" href="#crawling-web-dari-detik-com" title="Permalink to this heading">#</a></h1>
+<p>untuk lebih jelasnya bisa dilihat pada link berikut</p>
+<p><a class="reference external" href="https://esairina.medium.com/scraping-berita-online-pada-situs-detik-com-menggunakan-google-colab-3a764981384b">https://esairina.medium.com/scraping-berita-online-pada-situs-detik-com-menggunakan-google-colab-3a764981384b</a></p>
+<p>CRAWLING WEB
+yaitu</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -555,65 +583,60 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">793</span><span class="s2">                 method,</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_make_request</span><span class="nt">(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="s2">             # Trigger any extra validation we need to do.</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span><span class="s2">             try:</span>
-<span class="ne">--&gt; </span><span class="mi">468</span><span class="s2">                 self._validate_conn(conn)</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="s2">             except (SocketTimeout, BaseSSLError) as e:</span>
-<span class="g g-Whitespace">    </span><span class="mi">470</span><span class="s2">                 self._raise_timeout(err=e, url=url, timeout_value=conn.timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span><span class="s2">         # Receive the response from the server</span>
+<span class="g g-Whitespace">    </span><span class="mi">536</span><span class="s2">         try:</span>
+<span class="ne">--&gt; </span><span class="mi">537</span><span class="s2">             response = conn.getresponse()</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span><span class="s2">         except (BaseSSLError, OSError) as e:</span>
+<span class="g g-Whitespace">    </span><span class="mi">539</span><span class="s2">             self._raise_timeout(err=e, url=url, timeout_value=read_timeout)</span>
 
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_validate_conn</span><span class="nt">(self, conn)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1095</span><span class="s2">         # Force connect early to allow us to validate the connection.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1096</span><span class="s2">         if conn.is_closed:</span>
-<span class="ne">-&gt; </span><span class="mi">1097</span><span class="s2">             conn.connect()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1098</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1099</span><span class="s2">         if not conn.is_verified:</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connection.py</span> in <span class="ni">getresponse</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">459</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">460</span><span class="s2">         # Get the response from http.client.HTTPConnection</span>
+<span class="ne">--&gt; </span><span class="mi">461</span><span class="s2">         httplib_response = super().getresponse()</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span><span class="s2">         try:</span>
 
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connection.py</span> in <span class="ni">connect</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">640</span><span class="s2">             )</span>
-<span class="g g-Whitespace">    </span><span class="mi">641</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">642</span><span class="s2">         sock_and_verified = _ssl_wrap_socket_and_match_hostname(</span>
-<span class="g g-Whitespace">    </span><span class="mi">643</span><span class="s2">             sock=sock,</span>
-<span class="g g-Whitespace">    </span><span class="mi">644</span><span class="s2">             cert_reqs=self.cert_reqs,</span>
+<span class="nn">/usr/lib/python3.10/http/client.py</span> in <span class="ni">getresponse</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1373</span><span class="s2">         try:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span><span class="s2">             try:</span>
+<span class="ne">-&gt; </span><span class="mi">1375</span><span class="s2">                 response.begin()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1376</span><span class="s2">             except ConnectionError:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1377</span><span class="s2">                 self.close()</span>
 
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connection.py</span> in <span class="ni">_ssl_wrap_socket_and_match_hostname</span><span class="nt">(sock, cert_reqs, ssl_version, ssl_minimum_version, ssl_maximum_version, cert_file, key_file, key_password, ca_certs, ca_cert_dir, ca_cert_data, assert_hostname, assert_fingerprint, server_hostname, ssl_context, tls_in_tls)</span>
-<span class="g g-Whitespace">    </span><span class="mi">781</span><span class="s2">             server_hostname = normalized</span>
-<span class="g g-Whitespace">    </span><span class="mi">782</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">783</span><span class="s2">     ssl_sock = ssl_wrap_socket(</span>
-<span class="g g-Whitespace">    </span><span class="mi">784</span><span class="s2">         sock=sock,</span>
-<span class="g g-Whitespace">    </span><span class="mi">785</span><span class="s2">         keyfile=key_file,</span>
+<span class="nn">/usr/lib/python3.10/http/client.py</span> in <span class="ni">begin</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">316</span><span class="s2">         # read until we get a non-100 response</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span><span class="s2">         while True:</span>
+<span class="ne">--&gt; </span><span class="mi">318</span><span class="s2">             version, status, reason = self._read_status()</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span><span class="s2">             if status != CONTINUE:</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span><span class="s2">                 break</span>
 
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/util/ssl_.py</span> in <span class="ni">ssl_wrap_socket</span><span class="nt">(sock, keyfile, certfile, cert_reqs, ca_certs, server_hostname, ssl_version, ciphers, ssl_context, ca_cert_dir, key_password, ca_cert_data, tls_in_tls)</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="s2">         pass</span>
-<span class="g g-Whitespace">    </span><span class="mi">470</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">471</span><span class="s2">     ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span><span class="s2">     return ssl_sock</span>
-<span class="g g-Whitespace">    </span><span class="mi">473</span><span class="s2"> </span>
+<span class="nn">/usr/lib/python3.10/http/client.py</span> in <span class="ni">_read_status</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span><span class="s2">     def _read_status(self):</span>
+<span class="ne">--&gt; </span><span class="mi">279</span><span class="s2">         line = str(self.fp.readline(_MAXLINE + 1), &quot;iso-8859-1&quot;)</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span><span class="s2">         if len(line) &gt; _MAXLINE:</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span><span class="s2">             raise LineTooLong(&quot;status line&quot;)</span>
 
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/util/ssl_.py</span> in <span class="ni">_ssl_wrap_socket_impl</span><span class="nt">(sock, ssl_context, tls_in_tls, server_hostname)</span>
-<span class="g g-Whitespace">    </span><span class="mi">513</span><span class="s2">         return SSLTransport(sock, ssl_context, server_hostname)</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">515</span><span class="s2">     return ssl_context.wrap_socket(sock, server_hostname=server_hostname)</span>
+<span class="nn">/usr/lib/python3.10/socket.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span><span class="s2">         while True:</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span><span class="s2">             try:</span>
+<span class="ne">--&gt; </span><span class="mi">705</span><span class="s2">                 return self._sock.recv_into(b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span><span class="s2">             except timeout:</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span><span class="s2">                 self._timeout_occurred = True</span>
 
-<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">wrap_socket</span><span class="nt">(self, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, session)</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span><span class="s2">         # SSLSocket class handles server_hostname encoding before it calls</span>
-<span class="g g-Whitespace">    </span><span class="mi">512</span><span class="s2">         # ctx._wrap_socket()</span>
-<span class="ne">--&gt; </span><span class="mi">513</span><span class="s2">         return self.sslsocket_class._create(</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span><span class="s2">             sock=sock,</span>
-<span class="g g-Whitespace">    </span><span class="mi">515</span><span class="s2">             server_side=server_side,</span>
+<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1272</span><span class="s2">                   &quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot; %</span>
+<span class="g g-Whitespace">   </span><span class="mi">1273</span><span class="s2">                   self.__class__)</span>
+<span class="ne">-&gt; </span><span class="mi">1274</span><span class="s2">             return self.read(nbytes, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1275</span><span class="s2">         else:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1276</span><span class="s2">             return super().recv_into(buffer, nbytes, flags)</span>
 
-<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">_create</span><span class="nt">(cls, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, context, session)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1069</span><span class="s2">                         # non-blocking</span>
-<span class="g g-Whitespace">   </span><span class="mi">1070</span><span class="s2">                         raise ValueError(&quot;do_handshake_on_connect should not be specified for non-blocking sockets&quot;)</span>
-<span class="ne">-&gt; </span><span class="mi">1071</span><span class="s2">                     self.do_handshake()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1072</span><span class="s2">             except (OSError, ValueError):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1073</span><span class="s2">                 self.close()</span>
-
-<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">do_handshake</span><span class="nt">(self, block)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1340</span><span class="s2">             if timeout == 0.0 and block:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1341</span><span class="s2">                 self.settimeout(None)</span>
-<span class="ne">-&gt; </span><span class="mi">1342</span><span class="s2">             self._sslobj.do_handshake()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1343</span><span class="s2">         finally:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1344</span><span class="s2">             self.settimeout(timeout)</span>
+<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1128</span><span class="s2">         try:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1129</span><span class="s2">             if buffer is not None:</span>
+<span class="ne">-&gt; </span><span class="mi">1130</span><span class="s2">                 return self._sslobj.read(len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1131</span><span class="s2">             else:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span><span class="s2">                 return self._sslobj.read(len)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -628,7 +651,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&quot;/content/drive&quot;, force_remount=True).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mounted at /content/drive
 </pre></div>
 </div>
 </div>
@@ -643,7 +666,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-e2381960-f5e1-4a10-b34d-01a25ad92f7f" class="colab-df-container">
+  <div id="df-f374973b-2a4c-4a14-b365-38505a8b1599" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -753,7 +776,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-e2381960-f5e1-4a10-b34d-01a25ad92f7f')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-f374973b-2a4c-4a14-b365-38505a8b1599')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -805,12 +828,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-e2381960-f5e1-4a10-b34d-01a25ad92f7f button.colab-df-convert');
+        document.querySelector('#df-f374973b-2a4c-4a14-b365-38505a8b1599 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-e2381960-f5e1-4a10-b34d-01a25ad92f7f');
+        const element = document.querySelector('#df-f374973b-2a4c-4a14-b365-38505a8b1599');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -830,8 +853,8 @@ document.write(`
   </div>
 
 
-<div id="df-d8c94319-efd7-4ac5-803a-8bfe36e2de24">
-  <button class="colab-df-quickchart" onclick="quickchart('df-d8c94319-efd7-4ac5-803a-8bfe36e2de24')"
+<div id="df-33a1cb26-f866-4a8c-adcb-c8c3e43fe7de">
+  <button class="colab-df-quickchart" onclick="quickchart('df-33a1cb26-f866-4a8c-adcb-c8c3e43fe7de')"
             title="Suggest charts"
             style="display:none;">
 
@@ -950,7 +973,7 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-d8c94319-efd7-4ac5-803a-8bfe36e2de24 button');
+        document.querySelector('#df-33a1cb26-f866-4a8c-adcb-c8c3e43fe7de button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -970,8 +993,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sastrawi in /usr/local/lib/python3.10/dist-packages (1.0.1)
-Requirement already satisfied: swifter in /usr/local/lib/python3.10/dist-packages (1.4.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting sastrawi
+  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/209.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">92.2/209.7 kB</span> <span class=" -Color -Color-Red">2.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">4.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hInstalling collected packages: sastrawi
+Successfully installed sastrawi-1.0.1
+Collecting swifter
+  Downloading swifter-1.4.0.tar.gz (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.2/1.2 MB</span> <span class=" -Color -Color-Red">13.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h  Preparing metadata (setup.py) ... ?25l?25hdone
 Requirement already satisfied: pandas&gt;=1.0.0 in /usr/local/lib/python3.10/dist-packages (from swifter) (1.5.3)
 Requirement already satisfied: psutil&gt;=5.6.6 in /usr/local/lib/python3.10/dist-packages (from swifter) (5.9.5)
 Requirement already satisfied: dask[dataframe]&gt;=2.10.0 in /usr/local/lib/python3.10/dist-packages (from swifter) (2023.8.1)
@@ -990,6 +1022,13 @@ Requirement already satisfied: numpy&gt;=1.21.0 in /usr/local/lib/python3.10/dis
 Requirement already satisfied: zipp&gt;=0.5 in /usr/local/lib/python3.10/dist-packages (from importlib-metadata&gt;=4.13.0-&gt;dask[dataframe]&gt;=2.10.0-&gt;swifter) (3.17.0)
 Requirement already satisfied: locket in /usr/local/lib/python3.10/dist-packages (from partd&gt;=1.2.0-&gt;dask[dataframe]&gt;=2.10.0-&gt;swifter) (1.0.0)
 Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil&gt;=2.8.1-&gt;pandas&gt;=1.0.0-&gt;swifter) (1.16.0)
+Building wheels for collected packages: swifter
+  Building wheel for swifter (setup.py) ... ?25l?25hdone
+  Created wheel for swifter: filename=swifter-1.4.0-py3-none-any.whl size=16505 sha256=c5d48125fb838248b4fa0f8d0175a293288069bf3433e2ec9fa654c3a5b6a4d4
+  Stored in directory: /root/.cache/pip/wheels/e4/cf/51/0904952972ee2c7aa3709437065278dc534ec1b8d2ad41b443
+Successfully built swifter
+Installing collected packages: swifter
+Successfully installed swifter-1.4.0
 Requirement already satisfied: gensim in /usr/local/lib/python3.10/dist-packages (4.3.2)
 Requirement already satisfied: numpy&gt;=1.18.5 in /usr/local/lib/python3.10/dist-packages (from gensim) (1.23.5)
 Requirement already satisfied: scipy&gt;=1.7.0 in /usr/local/lib/python3.10/dist-packages (from gensim) (1.11.3)
@@ -998,6 +1037,9 @@ Requirement already satisfied: smart-open&gt;=1.8.1 in /usr/local/lib/python3.10
 </div>
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="search-kalimat-penting-dalam-berita">
+<h1>Search Kalimat penting Dalam Berita<a class="headerlink" href="#search-kalimat-penting-dalam-berita" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Impor pustaka spaCy</span>
@@ -1037,7 +1079,7 @@ Requirement already satisfied: smart-open&gt;=1.8.1 in /usr/local/lib/python3.10
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
-[nltk_data]   Package punkt is already up-to-date!
+[nltk_data]   Unzipping tokenizers/punkt.zip.
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
@@ -1049,10 +1091,21 @@ Requirement already satisfied: smart-open&gt;=1.8.1 in /usr/local/lib/python3.10
 <section class="tex2jax_ignore mathjax_ignore" id="tf-idf-dalam-kalimat-dan-cosinsemiliarity">
 <h1>TF - IDF Dalam Kalimat dan cosinsemiliarity<a class="headerlink" href="#tf-idf-dalam-kalimat-dan-cosinsemiliarity" title="Permalink to this heading">#</a></h1>
 <p><img alt="rumus1.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVMAAAB8CAYAAADUxlMjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACYFSURBVHhe7d0FdCvH2cbxCTMzMzMzM0MbLAQaatIwNE0aaKDBJmmapGFmZmZmZmZm5n75zee9Z6Mry5It2da97/8cHduyYHe1+8zzwoyG+N8vpCBoIj/99FP6/vvv03DDDZeGHHLIjnubx3fffZd/ev0g6C+EmAZN5fPPP0+vvPJK/n3aaadNI4wwQv69mbz22mvp448/TmONNVaaZJJJ0hBDDNHxnyDoO0JMg6bx9ttvpwcffDBNPfXU+TbssMN2/Ke5OGU//fTT9MADD6QxxxwzzT333B3/CYK+o/kxWDBY8tlnn6XHHnssTTTRRGm66aZrmZCCEx1jjDHSbLPNll5//fX06KOPZoENgr4kxDToMfKjt9xyS/59zjnnTEMNNVT+vSvKAvjzzz/nWyOiON5446UZZpghPfTQQ+mtt97quDcI+oYI84Mewx2ed955af3118/OtB6++eabdNppp6Vbb701DTPMMGnsscfO9xPUhRZaKLtOOdeu8qE//vhjuvTSS9Poo4+ellhiibqFPAiaTTjToEcQv8cffzzNPPPMAwSxHoYffvi00kor5Wr/OOOMk7beeuu0ww47pLXXXju98cYbaa+99kp33313x6M7Z+ihh05zzDFHdqbvvfdex71B0PuEmAY9gsN88skn04QTTthQqxLHSYix9NJLpymnnDJX5rnSTTbZJOdEjz/++Fy174qJJ544i6kCWBD0FSGmQY9QeBpllFFym1Kj3H///fn5wvkyI488cppiiinSc889l959992OeztHmmDyySdP3377bRSigj4jxDToEa+++moWsUar9xrvb7/99pweqMyzEkSvyenW87pcrsfpb/3hhx867g2C3iXENOgRH3zwQb416gg13nOeCk2Vjf1ynw8//HCaZppp0vjjj99xb22+/PLLnGs1+yoI+oIQ06BPeOaZZ3LhSfGozIcffpjOOeecnDrYcsstc8hfD62YthoEjRBnYJvA+ckvcm1C4Fp4rMJQZyGv/wuz9Yc26ih7ivckpBdeeGF2pIpQ9unpp59OV199dTrwwAPT119/nf7+97/nntX+xPPPP5+uueaacL9BVYba+xc6fh9s0auoveeJJ55IL7/8cq4Km6747LPPphdffDHfvvrqq3zhaxAXnnJQo402WtMX2yBuxMR7afsBYTRN88orr0xnn312+uKLL9Iss8zSqRsT8h577LH5+SrdZYjZddddl4488sj8fFX0nvRmOhbC6/nnn78uF+mYHnXUUbmwZF8d89tuuy3PYiKuiy22WG6ZqtzurvD5GWwWWGCBXJBqNo75CSeckO699960yiqrhBMOBiLE9Bc4jfvuuy8dfPDB2XnI0xHJSy65JO2///5ZnKaaaqp833HHHZcuv/zyXL02bXLEEUfseJXmUIg4YfLaxI9j44qIzIILLpj/p2hTeUFzeHfeeWcWXyJH7M1fJ86FOHGk99xzTxZlxR9hdk/E9P3338/bWC33WQ3HbamllkrrrrtuWmONNdKyyy6bb8sss0yaa6650mSTTdatxVG0Rjkes84664BBqFkQfcUtAxpRXW211bqcTBC0DkbDIOwzeeSRR9LJJ5+cDYK/mQznI9ODUUcdNf/sDWJ4/QVOxsVMXPQ5aiA3m0YTuoU0Ntxww3zBu8g5sMMOOyxtttlmDTWpd4ULVlHmlFNOSRdffHH65JNPsks+/fTT09FHH53Fk6ATcNtQTQCJfeFiVbeJ60cfffQr90yguT+tR0WfJ4pwm0MUhhPgMkSYQ1cY8rgC93tsvekC220bNO27+X2kkUbKx7YnIij1IXqodzsa4amnnsqDmX31PgQ16BsI5RVXXJEuu+yyfL4oUjINTA5R9Rk5350LRxxxRG6/6y1CTDtwkbgQCSphMUVRw7hpigSVA7vrrrvSvPPO22M3Vw3vzR0L5d9555084nKZtsOydoVY1MKJxEUT0iJNQFzdV0Zaw/+5KzfPu/baa9P555+f389J6OR888038+O5ZdNFTzzxxHTBBRfk/3mMx7/00kt5+/o6j2gfhfmtEFPHhxMy0EjvGOiCvkE7HYOx6KKL5tXCpp9++mx8XKNFese1ufjii6eZZpopp5Sco71BiGkHhIpojDvuuFnUiA1hNerh5ptvThNMMEH+gLoK8QjYRRddlHbaaaeBbjvuuGPabbfd8qyhMkJUblEOc7/99ktrrbVWWn311XMRZtNNN03rrbdednC1IKIzzjhjFnwnkIVApAVqOWgnHpG44YYb0nzzzZdkfUzrNHA4Ee2LPCExXXPNNdMBBxyQUwaHH354HmCcwP0h5C0GhlYg/bD77rvnGVn77rtvTkUEvY/B0gDu/Jt99tk77v1/c1A5iDqvnc9C/7POOqtX+o9DTDtQEJF3c/A5Q3k9gspxKW7IvXQWXlcizDByau2pvG211VY5RUA4yzgZhJIEoZhNxBnLfda7eIgpmC58s4Fsq+ctssgieWWlangvg8iNN96YRZOQQyrByaow5JgIx7UqOWlhgNHWJDUiv+w4VYOD42SdzHK0Pb2deeaZAw1CvYmQ0nHtD4PH4IjrsjAJlZM5qkUkTISBz/Ur3dVqQkw7cOETUvkxRQwfhJCuKGxwePUWm+R15Ba1/1TeiIvCVuU8cmG81ZdUo4sCjBwlkSeOjaBAtfHGG2dnXQuiYFs5cqN+efQ2+ktxGEzkkddZZ510xx135C4AIe/vfve7NOmkk3YqpBAeO/lfeOGFptwMNr1xUQT9E7l556v0VT0DGuPjWmACesOZxhJ8v0AwilzgnnvumXMwxG3nnXfOs3sOOeSQvAhHGcUiHxb3V/nB+vBMszSSVoM4y/WU57MTHe+3+eabZ+HmBG2P/kuhZVGV9HEReT+lJLoDt7vNNtuk3/zmN3lREd0JwvbiPsfDqk1cq5QD4TcQGGDcZ7u5NGIt/aFjQNGuu9vTUxyLM844I+d4t99++251AwT9HwOq6E4+VCqq+JyloaTFuFBV/SIdplC63Xbb5etREbfV52c4019wsIXmcpoq3cV9BG+PPfYYSEjBnWlhqjYWGTl9bYcQu9qN0ysLKQgvdyjcloskWsITeZ9y/6bt4mD1dnYHlWjhOxfOadoHKY0VV1wxt4XJkxJxJ550hBOTazcridgabLbYYovca6kIJRXRX8Le8AWDNlJKBnAiyezAMo0Geq7VoH/VVVcN6LZwHRlgpb4qr7dWEH2mv0AMHGzFpaI9h+uU1zTaVYqFHKOCzcILL1z33PGuIFreX5+c9+RICZ7e0uJEIBYKQ/pOiawKZqMIkzhPuT/pDM5aDsoJZwDwP3+vsMIKOYyHcF3xTWivN5R7tWweDACOmefXmwZpBdq5DETzzDNPS5r2g76H4REduf5cE65Pg7nzTrG2yOFbDtK1on0K6hRSVq0mwvxuwNEZATfaaKNcrGkW2nuE8Io7RlsnxZJLLvmropfWkGOOOSYdeuihDc8S6g4cslYUwrr88ssP2BZulUPgbJ3QRFYBrF6IusZqbVXchn01aDkdvbaQjtswGaCrQcNzrr/++pySEe6V+2qDQQs5eqkloT3xZCoqcW75Gh2G549//GM2Db1BhPndwBfHSWg3W8wIyD777JNDbZV1udOykHpPuVX3c4+9AZenAGYigDDfnHntKYpBXIDts91O4EbxPK+nWFe4f21aUgrSKN6HSNYz3gvppD5qFcSC9ke9QVpKlFROf5URXYm4dtlll14TUoSYNohcjbYMedRmX7hamJwAQhZheGVfKTGVR3V/bwUU9pUj1eu6wQYb5FypUFo6QuhkO7qzLV7XawjVisWhFcb0chJv76XwphhYD93djqD9MPA6b6TFqqEwJdrp7YJohPkN4nAVbRZyhUbK3sJ7C7u9r97P/oC8lLn+quhduWWDDzdqip9eVcUBbVk6CoRtp556av571113ze6j7Mpr4bhENT/oa8KZNohRkaty600hhfcW2vQXIS0gZl2NyQYghTPTVgsh1cwvVaDtyz7JwXIb8rNF2F8v9WxDELSSENOgRygOKZjVGlg4Uou33HTTTWm55ZZLq666am47k48VrhFSAirsV0Dyv0YHKkUn29LbA1wQFMSZF/QIYig3VSt/bPUrzdR6eAkll2r9A7nSohtC+M+NdqfVjCOV+rAuQbRFBX1FiGnQI7RDmfKqPaoz9MZC4QraqbR4KTTpGyTExFWOVItUAdFV3dfyVAt9sLoLONxwpkFfEWde0CMImEkGZnCZnVUNRSWzUoieabjEVN5UwYr4EWKtTboZyu0uOieslVBLqEHMTb/trXaxIKhGiGnQI7hJywQSPc321Vh55ZVzK5mKuyKTef36/7RWcaWKUdq9ym1QhFengCmCtZr2hfhmi0k3NGs2WhB0h2iNCnoMB3nuuefmIpIZW9XQ0qWxn/OU3ySWOiK4WVV+Qmy2Srkd6qSTTspiuu2223b69RMWlNHYT4iJdBD0FeFMgx4j1De1TzhuhlY1OE/51WIxaZMPVPflSk0ptdBKWUi9lgVdOM7OhNTzvI6iVrEWaxD0FSGmQVMwfc9iJ0JubrFWdR+cKjdr2ighrsx3yrFqvhe6V3st/zfFVa60ctptEPQFEeYHTUUhyWpXwnmrUHW26AiBFPYTwWrtTP5vjrUClVu5iV/BiWu1WhBXKm0QBH1NiGnQdORDrfjENbZC6LhaQuv1G50pFQStIsQ0CIKgCUTONAiCoAmEmAZBEDSBENMgCIImEGIaBEHQBEJMgyAImkCIaRAEQRMIMQ2CIGgCIaZBEARNIMQ0CIKgCYSYBkEQNIEQ0yAIgiYQYhoEQdAEQkyDIAiaQIhpEARBEwgxDYIgaAIhpkEQBE0gxDQIgqAJhJgGQRA0gRDTIAiCJhBiGgRB0ARCTIMgCJpAiGkQBEETCDENgiBoAiGmQRAETSDENAiCoAmEmAZBEDSBENMgCIImEGIaBEHQBEJMgyAImsAQ//uFjt+DIDkdvv/++3wbcsgh088//5x++umnfH9nDDHEEGmooYZKI444Yv4ZBIMjIabBr/jxxx/T9ddfn/7973+n999/P40//vhpyimnTMMMM0yngvrll1+mb775Jm266aZpiSWW6Lg3CAYvQkyDgfj000/T8ccfnw4++OA08sgjp7333jutvvrqadhhh81OtZJ333033XTTTWmsscZKv/3tb/N93377bb7v5Zdfzs+ZYIIJ0rjjjptefPHF9PXXX2fXO//886ePPvooPfvss/kx8803X7414m5fe+21/D4EfbjhhktTTDFFFvbXX389v+Y444yTZpxxxvToo4+mTz75JI022mhphRVWyNsTBM0kcqbBQIw++uhp2223TUcddVQafvjh0wEHHJAuu+yyLIDEtfI29dRTpzXXXDNNNNFEA9zr0EMPnR9/1llnpQsvvDCnALzuAw88kP7zn/9kwSNs77zzTjrmmGOyIHstKYNGsH1vvPFG3sbnn38+CzpOO+20dN111+X3GGGEEdJtt92WLr/88izURDcImk2IaVAVgrPOOutkQfX7rrvumn//7LPPOh7xa8Yee+w0zzzzDBBDYjr33HOnqaaaKi2zzDJp5ZVXzikDz59sssnSuuuumyaccMIsbgcddFDad99906yzzpoFuBHGG2+8NO+88+ZUxNprr53mmmuu/Bqc8VJLLZVdKOGec84503HHHZc22GCDNOaYY3Y8OwiaR4hp0CmEkSAdeeSRabrppksHHnhg+uc//5mdYCUeS0DLfP755zn8nnzyyXNof8MNN+TQe9RRR80O9vzzz88/l19++ZxC6C5vvfVWFtUxxhgjPffcc+mpp55Ko4wySnalL7zwQrrxxhtz+mDaaafteEYQNJ8Q06Am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" /></p>
-<p>MENGHITUNG NILAI TF DAN IDF</p>
-<p>• idf = log (D/df)</p>
-<p>– D = Jumlah Dokumen yang di perbandingkan</p>
-<p>• Wdt = tf * Idf</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="formula-tf-idf">
+<h1>Formula TF-IDF<a class="headerlink" href="#formula-tf-idf" title="Permalink to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[
+W1= tf1 * log \frac{D}{df1}
+\]</div>
+<p>KETERANGAN:</p>
+<ul class="simple">
+<li><p>W1​ adalah bobot dari term (kata atau token) pertama dalam dokumen.</p></li>
+<li><p>tf1 adalah frekuensi kemunculan term pertama dalam dokumen (Term Frequency).</p></li>
+<li><p>df1 adalah jumlah dokumen yang berisi term pertama (Document Frequency).</p></li>
+<li><p>D adalah total jumlah dokumen dalam korpus atau koleksi dokumen yang sedang diproses.</p></li>
+<li><p>log⁡ adalah fungsi logaritma yang umumnya menggunakan basis 10 atau basis lainnya tergantung pada implementasi yang digunakan</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
@@ -1290,8 +1343,23 @@ terlihat: 0.3869
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="cosine-similarit">
-<h1>Cosine Similarit<a class="headerlink" href="#cosine-similarit" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="cosine-similarity">
+<h1>Cosine Similarity<a class="headerlink" href="#cosine-similarity" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="formula-cosim">
+<h1>Formula Cosim<a class="headerlink" href="#formula-cosim" title="Permalink to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[
+sim(Q, Di) = \frac{{\sum_{i}WQ,jWi,j}}{{\sum_{j}W^2Q,j} {\sum_{i}W^2 i,j}}
+\]</div>
+<p>KETERANGAN:</p>
+<ul class="simple">
+<li><p>Q adalah vektor representasi dari query (pertanyaan atau pencarian) yang ingin dicocokkan dengan dokumen.</p></li>
+<li><p>Di adalah vektor representasi dari dokumen ke-i yang ada dalam koleksi.</p></li>
+<li><p>∑i​WQ,j​Wi,j​ adalah hasil dari perkalian titik antara vektor query QQ dan vektor dokumen Di</p></li>
+<li><p>∑j​WQ,j2​ adalah penjumlahan kuadrat dari setiap elemen dalam vektor query Q</p></li>
+<li><p>∑i​Wi,j2​ adalah penjumlahan kuadrat dari setiap elemen dalam vektor dokumen DiDi</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
@@ -1479,7 +1547,7 @@ Similarity Kalimat 17 dan Kalimat 18: 0.1066
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-521835c6-89b6-4e93-aabe-7eb635c2d0e6" class="colab-df-container">
+  <div id="df-5d1af6ec-356e-4c30-9cf0-816dc5498003" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1903,7 +1971,7 @@ Similarity Kalimat 17 dan Kalimat 18: 0.1066
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-521835c6-89b6-4e93-aabe-7eb635c2d0e6')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-5d1af6ec-356e-4c30-9cf0-816dc5498003')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1955,12 +2023,12 @@ Similarity Kalimat 17 dan Kalimat 18: 0.1066
 
     <script>
       const buttonEl =
-        document.querySelector('#df-521835c6-89b6-4e93-aabe-7eb635c2d0e6 button.colab-df-convert');
+        document.querySelector('#df-5d1af6ec-356e-4c30-9cf0-816dc5498003 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-521835c6-89b6-4e93-aabe-7eb635c2d0e6');
+        const element = document.querySelector('#df-5d1af6ec-356e-4c30-9cf0-816dc5498003');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1980,8 +2048,8 @@ Similarity Kalimat 17 dan Kalimat 18: 0.1066
   </div>
 
 
-<div id="df-79f09c1d-d8f6-4fb5-b572-25de331efc36">
-  <button class="colab-df-quickchart" onclick="quickchart('df-79f09c1d-d8f6-4fb5-b572-25de331efc36')"
+<div id="df-4102c254-24cb-45d8-8d92-5e82db1279c8">
+  <button class="colab-df-quickchart" onclick="quickchart('df-4102c254-24cb-45d8-8d92-5e82db1279c8')"
             title="Suggest charts"
             style="display:none;">
 
@@ -2100,7 +2168,7 @@ Similarity Kalimat 17 dan Kalimat 18: 0.1066
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-79f09c1d-d8f6-4fb5-b572-25de331efc36 button');
+        document.querySelector('#df-4102c254-24cb-45d8-8d92-5e82db1279c8 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -2130,12 +2198,13 @@ Similarity Kalimat 17 dan Kalimat 18: 0.1066
 <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">arrows</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
 
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;graph.pdf&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e808370f4ad398e024733f8f7cfea2aa5322483a121d2ada88031df73d0aeecb.png" src="_images/e808370f4ad398e024733f8f7cfea2aa5322483a121d2ada88031df73d0aeecb.png" />
+<img alt="_images/8ffedd6bd777b7dc248fa3095f975fa471d00b2b7aa82211debe2b0a38a6e23f.png" src="_images/8ffedd6bd777b7dc248fa3095f975fa471d00b2b7aa82211debe2b0a38a6e23f.png" />
 </div>
 </div>
 </section>
@@ -2200,6 +2269,920 @@ Kalimat: Gibran terlihat duduk di sebelah kanan dari posisi Anies dan Cak Imin.
 </div>
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="formula-page-rank">
+<h1>FORMULA PAGE RANK<a class="headerlink" href="#formula-page-rank" title="Permalink to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[
+PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
+\]</div>
+<p>“KETERANGAN:</p>
+<ul class="simple">
+<li><p>( PR(u) ) adalah PageRank dari halaman ( u ).</p></li>
+<li><p>( d ) adalah damping factor, biasanya diatur sebagai 0.85.</p></li>
+<li><p>( N ) adalah jumlah total halaman dalam graf (jumlah node dalam graf).</p></li>
+<li><p>( B_u ) adalah himpunan halaman yang memiliki tautan ke halaman ( u ).</p></li>
+<li><p>( L(v) ) adalah jumlah tautan keluar dari halaman ( v ).”</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="perhitungan-exel">
+<h1>Perhitungan EXEL<a class="headerlink" href="#perhitungan-exel" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mounted at /content/drive
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/UAS_PPW/tugas/hitungan_manual_pagerank.xlsx&#39;</span><span class="p">)</span>
+<span class="n">file</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-8b8cf0c5-8c0e-4f67-9af5-144925dde0c1" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Menghitung PageRank</th>
+      <th>Unnamed: 1</th>
+      <th>Unnamed: 2</th>
+      <th>Unnamed: 3</th>
+      <th>Unnamed: 4</th>
+      <th>Unnamed: 5</th>
+      <th>Unnamed: 6</th>
+      <th>Unnamed: 7</th>
+      <th>Unnamed: 8</th>
+      <th>Unnamed: 9</th>
+      <th>Unnamed: 10</th>
+      <th>Unnamed: 11</th>
+      <th>Unnamed: 12</th>
+      <th>Unnamed: 13</th>
+      <th>Unnamed: 14</th>
+      <th>Unnamed: 15</th>
+      <th>Unnamed: 16</th>
+      <th>Unnamed: 17</th>
+      <th>Unnamed: 18</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Jumlah Iterasi</td>
+      <td>Jumlah Node</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9.000000</td>
+      <td>10.000000</td>
+      <td>11</td>
+      <td>12.000000</td>
+      <td>13.000000</td>
+      <td>14.000000</td>
+      <td>15.000000</td>
+      <td>16.000000</td>
+      <td>17.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Iterasi 0</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+      <td>0.058824</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Iterasi 1</td>
+      <td>0.094897</td>
+      <td>0.063824</td>
+      <td>0.05049</td>
+      <td>0.02847</td>
+      <td>0.073887</td>
+      <td>0.083925</td>
+      <td>0.008824</td>
+      <td>0.018824</td>
+      <td>0.038053</td>
+      <td>0.086942</td>
+      <td>0.050490</td>
+      <td>0.045276</td>
+      <td>0.062359</td>
+      <td>0.092776</td>
+      <td>0.050692</td>
+      <td>0.027258</td>
+      <td>0.101563</td>
+      <td>0.039164</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Iterasi 2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Node</td>
+      <td>In-Degree</td>
+      <td>Out-Degree</td>
+      <td>Node Ke -</td>
+      <td>Langkah 1( 1-d)</td>
+      <td>Langkah 2 (1/N)</td>
+      <td>Langkah 3</td>
+      <td>Iterasi 1</td>
+      <td>Langkah 3  Iterasi 2</td>
+      <td>Iterasi 2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0</td>
+      <td>11</td>
+      <td>11</td>
+      <td>3, 4, 5, 8, 9, 11, 12, 13, 14, 16, 17</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.101263</td>
+      <td>0.094897</td>
+      <td>0.099516</td>
+      <td>0.098823</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2, 10, 13</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.064706</td>
+      <td>0.063824</td>
+      <td>0.059768</td>
+      <td>0.060376</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1, 10</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.04902</td>
+      <td>0.05049</td>
+      <td>0.04652</td>
+      <td>0.047115</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>3</td>
+      <td>4</td>
+      <td>4</td>
+      <td>0, 16, 4, 13</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.023113</td>
+      <td>0.02847</td>
+      <td>0.035347</td>
+      <td>0.034316</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>4</td>
+      <td>9</td>
+      <td>9</td>
+      <td>0, 3, 5, 9, 11, 12, 13, 14, 16</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.076545</td>
+      <td>0.073887</td>
+      <td>0.08449</td>
+      <td>0.082899</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>0, 4, 7, 13, 17</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.088354</td>
+      <td>0.083925</td>
+      <td>0.052771</td>
+      <td>0.057444</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>NaN</td>
+      <td>0.008824</td>
+      <td>NaN</td>
+      <td>0.001324</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>KETERANGAN: - ( PR(u) ) adalah PageRank dari h...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.011765</td>
+      <td>0.018824</td>
+      <td>0.016785</td>
+      <td>0.017091</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>8</td>
+      <td>5</td>
+      <td>5</td>
+      <td>0, 9, 11, 12, 16</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.034388</td>
+      <td>0.038053</td>
+      <td>0.042861</td>
+      <td>0.04214</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>0, 4, 8, 11, 12, 13, 14, 15, 16</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.091904</td>
+      <td>0.086942</td>
+      <td>0.101025</td>
+      <td>0.098913</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>10</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1, 2</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.04902</td>
+      <td>0.05049</td>
+      <td>0.04652</td>
+      <td>0.047115</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>11</td>
+      <td>6</td>
+      <td>6</td>
+      <td>0, 4, 8, 9, 12, 16</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.042885</td>
+      <td>0.045276</td>
+      <td>0.051135</td>
+      <td>0.050256</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>12</td>
+      <td>8</td>
+      <td>8</td>
+      <td>0, 4, 8, 9, 11, 13, 16, 17</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.062983</td>
+      <td>0.062359</td>
+      <td>0.067997</td>
+      <td>0.067151</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>13</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0, 1, 3, 4, 5, 9, 12, 14, 16, 17</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.098767</td>
+      <td>0.092776</td>
+      <td>0.104983</td>
+      <td>0.103152</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>14</td>
+      <td>6</td>
+      <td>6</td>
+      <td>0, 4, 9, 13, 15, 16</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.049257</td>
+      <td>0.050692</td>
+      <td>0.054093</td>
+      <td>0.053583</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>15</td>
+      <td>3</td>
+      <td>3</td>
+      <td>16, 9, 14</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.021687</td>
+      <td>0.027258</td>
+      <td>0.027342</td>
+      <td>0.027329</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>16</td>
+      <td>11</td>
+      <td>11</td>
+      <td>0, 3, 4, 8, 9, 11, 12, 13, 14, 15, 17</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.109106</td>
+      <td>0.101563</td>
+      <td>0.091211</td>
+      <td>0.092764</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>17</td>
+      <td>5</td>
+      <td>5</td>
+      <td>0, 5, 12, 13, 16</td>
+      <td>0.15</td>
+      <td>0.058824</td>
+      <td>0.035695</td>
+      <td>0.039164</td>
+      <td>0.051717</td>
+      <td>0.049834</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>17</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-8b8cf0c5-8c0e-4f67-9af5-144925dde0c1')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-8b8cf0c5-8c0e-4f67-9af5-144925dde0c1 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-8b8cf0c5-8c0e-4f67-9af5-144925dde0c1');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-03a17609-d645-4cfe-a588-26bee8afc375">
+  <button class="colab-df-quickchart" onclick="quickchart('df-03a17609-d645-4cfe-a588-26bee8afc375')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-03a17609-d645-4cfe-a588-26bee8afc375 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="code-pagerank">
+<h1>Code Pagerank<a class="headerlink" href="#code-pagerank" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pagerank</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -2235,6 +3218,376 @@ Node 6: 0.0087
 </div>
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="hitungan-manual-untuk-pgerank">
+<h1>Hitungan Manual Untuk PgeRank<a class="headerlink" href="#hitungan-manual-untuk-pgerank" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Your existing code adapted to cosine_similarities data</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cosine_similarities</span><span class="p">)):</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cosine_similarities</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cosine_similarities</span><span class="p">)):</span>
+        <span class="n">similarity</span> <span class="o">=</span> <span class="n">cosine_similarities</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">similarity</span> <span class="o">&gt;</span> <span class="mf">0.02</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">similarity</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># Adding edge with rounded similarity</span>
+
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">arrows</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+
+<span class="c1"># Adding edge labels</span>
+<span class="n">edge_labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">get_edge_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+<span class="n">edge_labels</span> <span class="o">=</span> <span class="p">{(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">weight</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">),</span> <span class="n">weight</span> <span class="ow">in</span> <span class="n">edge_labels</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edge_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_labels</span><span class="o">=</span><span class="n">edge_labels</span><span class="p">)</span>
+
+<span class="c1"># Calculating in-degree and out-degree for each node</span>
+<span class="n">indegree</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">in_degree</span><span class="p">())</span>
+<span class="n">outdegree</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">out_degree</span><span class="p">())</span>
+
+<span class="c1"># Threshold for connecting nodes</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.02</span>
+
+<span class="c1"># Printing in-degree and out-degree for each node</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Node</span><span class="se">\t</span><span class="s2">In-Degree</span><span class="se">\t</span><span class="s2">Out-Degree&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">indegree</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="se">\t\t</span><span class="si">{</span><span class="n">outdegree</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Initializing sets for nodes based on in-degree and out-degree of all nodes in the graph</span>
+<span class="n">connected_to</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(),</span> <span class="s1">&#39;out&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">()}</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()}</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">neighbor</span> <span class="o">!=</span> <span class="n">node</span><span class="p">:</span>
+            <span class="n">connected_to</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;out&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+            <span class="n">connected_to</span><span class="p">[</span><span class="n">neighbor</span><span class="p">][</span><span class="s1">&#39;in&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+<span class="c1"># Printing the initialized sets for all nodes in the graph</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2"> - In: </span><span class="si">{</span><span class="n">connected_to</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;in&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, Out: </span><span class="si">{</span><span class="n">connected_to</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;out&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Directed Graph Visualization with Cosine Similarities&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;graph.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node	In-Degree	Out-Degree
+0	11		11
+1	3		3
+2	2		2
+3	4		4
+4	9		9
+5	5		5
+6	0		0
+7	1		1
+8	5		5
+9	9		9
+10	2		2
+11	6		6
+12	8		8
+13	10		10
+14	6		6
+15	3		3
+16	11		11
+17	5		5
+Node 0 - In: {3, 4, 5, 8, 9, 11, 12, 13, 14, 16, 17}, Out: {3, 4, 5, 8, 9, 11, 12, 13, 14, 16, 17}
+Node 1 - In: {2, 10, 13}, Out: {2, 10, 13}
+Node 2 - In: {1, 10}, Out: {1, 10}
+Node 3 - In: {0, 16, 4, 13}, Out: {0, 16, 4, 13}
+Node 4 - In: {0, 3, 5, 9, 11, 12, 13, 14, 16}, Out: {0, 3, 5, 9, 11, 12, 13, 14, 16}
+Node 5 - In: {0, 4, 7, 13, 17}, Out: {0, 4, 7, 13, 17}
+Node 6 - In: set(), Out: set()
+Node 7 - In: {5}, Out: {5}
+Node 8 - In: {0, 9, 11, 12, 16}, Out: {0, 9, 11, 12, 16}
+Node 9 - In: {0, 4, 8, 11, 12, 13, 14, 15, 16}, Out: {0, 4, 8, 11, 12, 13, 14, 15, 16}
+Node 10 - In: {1, 2}, Out: {1, 2}
+Node 11 - In: {0, 4, 8, 9, 12, 16}, Out: {0, 4, 8, 9, 12, 16}
+Node 12 - In: {0, 4, 8, 9, 11, 13, 16, 17}, Out: {0, 4, 8, 9, 11, 13, 16, 17}
+Node 13 - In: {0, 1, 3, 4, 5, 9, 12, 14, 16, 17}, Out: {0, 1, 3, 4, 5, 9, 12, 14, 16, 17}
+Node 14 - In: {0, 4, 9, 13, 15, 16}, Out: {0, 4, 9, 13, 15, 16}
+Node 15 - In: {16, 9, 14}, Out: {16, 9, 14}
+Node 16 - In: {0, 3, 4, 8, 9, 11, 12, 13, 14, 15, 17}, Out: {0, 3, 4, 8, 9, 11, 12, 13, 14, 15, 17}
+Node 17 - In: {0, 5, 12, 13, 16}, Out: {0, 5, 12, 13, 16}
+</pre></div>
+</div>
+<img alt="_images/e04c4ff005d4288352e9c9c36cd794b42264cdd085fa12a337657aa23526e42f.png" src="_images/e04c4ff005d4288352e9c9c36cd794b42264cdd085fa12a337657aa23526e42f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="c1"># Buat graf</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edge_labels</span><span class="p">)</span>
+
+<span class="c1"># Inisialisasi PageRank</span>
+<span class="n">pagerank</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">}</span>
+
+<span class="c1"># Iterasi untuk menghitung PageRank</span>
+<span class="n">num_iterations</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_iterations</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iterasi </span><span class="si">{</span><span class="n">iteration</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="n">new_pagerank</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">damping_factor</span> <span class="o">=</span> <span class="mf">0.85</span>
+
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+        <span class="n">rank_sum</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+            <span class="n">neighbor_outdegree</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)))</span>
+            <span class="n">rank_sum</span> <span class="o">+=</span> <span class="n">pagerank</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span> <span class="o">/</span> <span class="n">neighbor_outdegree</span>
+
+        <span class="c1"># Hitung PageRank baru menggunakan rumus</span>
+        <span class="n">new_pagerank</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">damping_factor</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="o">+</span> <span class="n">damping_factor</span> <span class="o">*</span> <span class="n">rank_sum</span>
+
+        <span class="c1"># Cetak langkah-langkah perhitungan PageRank untuk setiap node</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: (</span><span class="si">{</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">damping_factor</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span><span class="si">}</span><span class="s2">) + (</span><span class="si">{</span><span class="n">damping_factor</span><span class="si">}</span><span class="s2"> * </span><span class="si">{</span><span class="n">rank_sum</span><span class="si">}</span><span class="s2">) = </span><span class="si">{</span><span class="n">new_pagerank</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Perbarui nilai PageRank</span>
+    <span class="n">pagerank</span> <span class="o">=</span> <span class="n">new_pagerank</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan hasil PageRank akhir</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil Akhir PageRank (Diurutkan):&quot;</span><span class="p">)</span>
+<span class="n">sorted_pagerank</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pagerank</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">rank</span> <span class="ow">in</span> <span class="n">sorted_pagerank</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iterasi 1:
+  - Node 0: (0.15000000000000002/17) + (0.85 * 0.10126262626262623) = 0.094896761734997
+  - Node 3: (0.15000000000000002/17) + (0.85 * 0.02311348781937017) = 0.02846999405822935
+  - Node 4: (0.15000000000000002/17) + (0.85 * 0.07654486036838977) = 0.07388666072489601
+  - Node 5: (0.15000000000000002/17) + (0.85 * 0.08835412953060011) = 0.08392453951277479
+  - Node 8: (0.15000000000000002/17) + (0.85 * 0.03438799762329174) = 0.03805332739156269
+  - Node 9: (0.15000000000000002/17) + (0.85 * 0.08144682115270349) = 0.07805332739156266
+  - Node 11: (0.15000000000000002/17) + (0.85 * 0.04288472964943553) = 0.04527554961378491
+  - Node 12: (0.15000000000000002/17) + (0.85 * 0.0629827688651218) = 0.06235888294711824
+  - Node 13: (0.15000000000000002/17) + (0.85 * 0.098767082590612) = 0.0927755496137849
+  - Node 14: (0.15000000000000002/17) + (0.85 * 0.04925727866904337) = 0.05069221628045157
+  - Node 16: (0.15000000000000002/17) + (0.85 * 0.10910576351752821) = 0.10156342840166367
+  - Node 17: (0.15000000000000002/17) + (0.85 * 0.035695187165775404) = 0.0391644385026738
+  - Node 1: (0.15000000000000002/17) + (0.85 * 0.06470588235294117) = 0.0638235294117647
+  - Node 2: (0.15000000000000002/17) + (0.85 * 0.049019607843137254) = 0.050490196078431374
+  - Node 10: (0.15000000000000002/17) + (0.85 * 0.049019607843137254) = 0.050490196078431374
+  - Node 7: (0.15000000000000002/17) + (0.85 * 0.011764705882352941) = 0.018823529411764708
+  - Node 15: (0.15000000000000002/17) + (0.85 * 0.021687462863933454) = 0.027257872846108144
+
+
+Iterasi 2:
+  - Node 0: (0.15000000000000002/17) + (0.85 * 0.0985282624222018) = 0.09257255247063624
+  - Node 3: (0.15000000000000002/17) + (0.85 * 0.03534720121596235) = 0.0388686504453327
+  - Node 4: (0.15000000000000002/17) + (0.85 * 0.0835020586134668) = 0.07980027923321148
+  - Node 5: (0.15000000000000002/17) + (0.85 * 0.05277057938265603) = 0.05367852188702233
+  - Node 8: (0.15000000000000002/17) + (0.85 * 0.041873394521567416) = 0.044415914755097013
+  - Node 9: (0.15000000000000002/17) + (0.85 * 0.07583331232707347) = 0.07328184488977714
+  - Node 11: (0.15000000000000002/17) + (0.85 * 0.05014776403368203) = 0.05144912884039443
+  - Node 12: (0.15000000000000002/17) + (0.85 * 0.06700927126283632) = 0.06578140998517558
+  - Node 13: (0.15000000000000002/17) + (0.85 * 0.10399560519034672) = 0.09721979382355941
+  - Node 14: (0.15000000000000002/17) + (0.85 * 0.05310575076372758) = 0.053963417560933154
+  - Node 16: (0.15000000000000002/17) + (0.85 * 0.09022325152895563) = 0.08551329321137699
+  - Node 17: (0.15000000000000002/17) + (0.85 * 0.051717340517474196) = 0.05278326885161778
+  - Node 1: (0.15000000000000002/17) + (0.85 * 0.059767751039809865) = 0.05962611779560309
+  - Node 2: (0.15000000000000002/17) + (0.85 * 0.04651960784313725) = 0.04836519607843137
+  - Node 10: (0.15000000000000002/17) + (0.85 * 0.04651960784313725) = 0.04836519607843137
+  - Node 7: (0.15000000000000002/17) + (0.85 * 0.016784907902554956) = 0.023090701128936422
+  - Node 15: (0.15000000000000002/17) + (0.85 * 0.026354333591410234) = 0.031224712964463407
+
+
+Iterasi 3:
+  - Node 0: (0.15000000000000002/17) + (0.85 * 0.10018917772318119) = 0.0939843304764687
+  - Node 3: (0.15000000000000002/17) + (0.85 * 0.03477829940966347) = 0.038385083909978655
+  - Node 4: (0.15000000000000002/17) + (0.85 * 0.08029832989749883) = 0.07707710982463871
+  - Node 5: (0.15000000000000002/17) + (0.85 * 0.060651718562434634) = 0.06037749018983415
+  - Node 8: (0.15000000000000002/17) + (0.85 * 0.04112958059958306) = 0.04378367292141031
+  - Node 9: (0.15000000000000002/17) + (0.85 * 0.07986115399720554) = 0.07670551030938941
+  - Node 11: (0.15000000000000002/17) + (0.85 * 0.050304606436449115) = 0.05158244488274646
+  - Node 12: (0.15000000000000002/17) + (0.85 * 0.07093541814771408) = 0.06911863483732167
+  - Node 13: (0.15000000000000002/17) + (0.85 * 0.10130021976984745) = 0.09492871621613502
+  - Node 14: (0.15000000000000002/17) + (0.85 * 0.05332896427445985) = 0.05415314904505558
+  - Node 16: (0.15000000000000002/17) + (0.85 * 0.10050346184234868) = 0.09425147197776108
+  - Node 17: (0.15000000000000002/17) + (0.85 * 0.04486998234263583) = 0.04696301440300517
+  - Node 1: (0.15000000000000002/17) + (0.85 * 0.058087175460787316) = 0.058197628553433925
+  - Node 2: (0.15000000000000002/17) + (0.85 * 0.04405797063775005) = 0.04627280445385225
+  - Node 10: (0.15000000000000002/17) + (0.85 * 0.04405797063775005) = 0.04627280445385225
+  - Node 7: (0.15000000000000002/17) + (0.85 * 0.010735704377404466) = 0.017948878132558504
+  - Node 15: (0.15000000000000002/17) + (0.85 * 0.024910265883286247) = 0.029997255412558016
+
+
+Iterasi 4:
+  - Node 0: (0.15000000000000002/17) + (0.85 * 0.10123167987160202) = 0.09487045730262642
+  - Node 3: (0.15000000000000002/17) + (0.85 * 0.03516934061311951) = 0.03871746893291629
+  - Node 4: (0.15000000000000002/17) + (0.85 * 0.08306224913618551) = 0.07942644117752239
+  - Node 5: (0.15000000000000002/17) + (0.85 * 0.05394250599193712) = 0.05467465950491126
+  - Node 8: (0.15000000000000002/17) + (0.85 * 0.04287208365826792) = 0.04526480052129244
+  - Node 9: (0.15000000000000002/17) + (0.85 * 0.08018758867755311) = 0.07698297978768485
+  - Node 11: (0.15000000000000002/17) + (0.85 * 0.05159586740927432) = 0.05268001670964788
+  - Node 12: (0.15000000000000002/17) + (0.85 * 0.07043858670394805) = 0.06869632811012055
+  - Node 13: (0.15000000000000002/17) + (0.85 * 0.10232823907970869) = 0.09580253262951709
+  - Node 14: (0.15000000000000002/17) + (0.85 * 0.05369126022945989) = 0.05446110060680562
+  - Node 16: (0.15000000000000002/17) + (0.85 * 0.09913098138012794) = 0.09308486358487345
+  - Node 17: (0.15000000000000002/17) + (0.85 * 0.0473205446919028) = 0.04904599239988209
+  - Node 1: (0.15000000000000002/17) + (0.85 * 0.05576567607546575) = 0.056224354075910594
+  - Node 2: (0.15000000000000002/17) + (0.85 * 0.04253561174473743) = 0.044978799394791526
+  - Node 10: (0.15000000000000002/17) + (0.85 * 0.04253561174473743) = 0.044978799394791526
+  - Node 7: (0.15000000000000002/17) + (0.85 * 0.01207549803796683) = 0.01908770274403651
+  - Node 15: (0.15000000000000002/17) + (0.85 * 0.02611667495400556) = 0.031022703122669436
+
+
+Iterasi 5:
+  - Node 0: (0.15000000000000002/17) + (0.85 * 0.10134168975882588) = 0.0949639657067667
+  - Node 3: (0.15000000000000002/17) + (0.85 * 0.03549226074719661) = 0.03899195104688182
+  - Node 4: (0.15000000000000002/17) + (0.85 * 0.08227895807126663) = 0.07876064377234133
+  - Node 5: (0.15000000000000002/17) + (0.85 * 0.05592690164531195) = 0.056361395810279866
+  - Node 8: (0.15000000000000002/17) + (0.85 * 0.043007555572969335) = 0.04537995164878864
+  - Node 9: (0.15000000000000002/17) + (0.85 * 0.08133001579218554) = 0.07795404283512242
+  - Node 11: (0.15000000000000002/17) + (0.85 * 0.05210567302312233) = 0.053113351481418686
+  - Node 12: (0.15000000000000002/17) + (0.85 * 0.07168808653722669) = 0.0697584029684074
+  - Node 13: (0.15000000000000002/17) + (0.85 * 0.10129451199282269) = 0.09492386460566399
+  - Node 14: (0.15000000000000002/17) + (0.85 * 0.05438682620894029) = 0.05505233168936395
+  - Node 16: (0.15000000000000002/17) + (0.85 * 0.10090998560034733) = 0.09459701717205994
+  - Node 17: (0.15000000000000002/17) + (0.85 * 0.04618907353110811) = 0.04808424191320661
+  - Node 1: (0.15000000000000002/17) + (0.85 * 0.05455905265774323) = 0.05519872417084645
+  - Node 2: (0.15000000000000002/17) + (0.85 * 0.04123085105603263) = 0.04386975280939244
+  - Node 10: (0.15000000000000002/17) + (0.85 * 0.04123085105603263) = 0.04386975280939244
+  - Node 7: (0.15000000000000002/17) + (0.85 * 0.010934931900982253) = 0.01811822152759962
+  - Node 15: (0.15000000000000002/17) + (0.85 * 0.02609277484788573) = 0.031002388032467576
+
+
+Iterasi 6:
+  - Node 0: (0.15000000000000002/17) + (0.85 * 0.1019653781197984) = 0.09549410081359334
+  - Node 3: (0.15000000000000002/17) + (0.85 * 0.035476385727285537) = 0.03897845727995741
+  - Node 4: (0.15000000000000002/17) + (0.85 * 0.08315444455755235) = 0.0795048072856842
+  - Node 5: (0.15000000000000002/17) + (0.85 * 0.05461172680370284) = 0.055243497194912124
+  - Node 8: (0.15000000000000002/17) + (0.85 * 0.04346640255831551) = 0.04576997158633289
+  - Node 9: (0.15000000000000002/17) + (0.85 * 0.08163391963404715) = 0.07821236110070477
+  - Node 11: (0.15000000000000002/17) + (0.85 * 0.05244135028254139) = 0.05339867715192489
+  - Node 12: (0.15000000000000002/17) + (0.85 * 0.07168301000160131) = 0.06975408791312582
+  - Node 13: (0.15000000000000002/17) + (0.85 * 0.10157743859771089) = 0.09516435221981895
+  - Node 14: (0.15000000000000002/17) + (0.85 * 0.054472075386455) = 0.05512479349025146
+  - Node 16: (0.15000000000000002/17) + (0.85 * 0.10106058725959889) = 0.09472502858242375
+  - Node 17: (0.15000000000000002/17) + (0.85 * 0.04671728261902117) = 0.04853321963793271
+  - Node 1: (0.15000000000000002/17) + (0.85 * 0.053362139269958836) = 0.05418134779122972
+  - Node 2: (0.15000000000000002/17) + (0.85 * 0.0403344511283117) = 0.043107812870829654
+  - Node 10: (0.15000000000000002/17) + (0.85 * 0.0403344511283117) = 0.043107812870829654
+  - Node 7: (0.15000000000000002/17) + (0.85 * 0.011272279162055972) = 0.018404966699512283
+  - Node 15: (0.15000000000000002/17) + (0.85 * 0.026436677763731223) = 0.031294705510936244
+
+
+Iterasi 7:
+  - Node 0: (0.15000000000000002/17) + (0.85 * 0.10211238937745258) = 0.09561906038259939
+  - Node 3: (0.15000000000000002/17) + (0.85 * 0.03564295082507968) = 0.039120037613082435
+  - Node 4: (0.15000000000000002/17) + (0.85 * 0.0830991655485572) = 0.07945782012803833
+  - Node 5: (0.15000000000000002/17) + (0.85 * 0.055143195217412705) = 0.05569524534656551
+  - Node 8: (0.15000000000000002/17) + (0.85 * 0.04360195098589495) = 0.045885187749775416
+  - Node 9: (0.15000000000000002/17) + (0.85 * 0.0820350197421618) = 0.07855329619260223
+  - Node 11: (0.15000000000000002/17) + (0.85 * 0.05269003325402784) = 0.05361005767768837
+  - Node 12: (0.15000000000000002/17) + (0.85 * 0.07209363093977636) = 0.0701031157105746
+  - Node 13: (0.15000000000000002/17) + (0.85 * 0.10128391146877137) = 0.09491485416022037
+  - Node 14: (0.15000000000000002/17) + (0.85 * 0.054764781673247845) = 0.055373593834025375
+  - Node 16: (0.15000000000000002/17) + (0.85 * 0.10156517409949464) = 0.09515392739633514
+  - Node 17: (0.15000000000000002/17) + (0.85 * 0.0465770437770157) = 0.04841401662222805
+  - Node 1: (0.15000000000000002/17) + (0.85 * 0.05262424809281155) = 0.05355414029065452
+  - Node 2: (0.15000000000000002/17) + (0.85 * 0.03961435569915807) = 0.042495731756049065
+  - Node 10: (0.15000000000000002/17) + (0.85 * 0.03961435569915807) = 0.042495731756049065
+  - Node 7: (0.15000000000000002/17) + (0.85 * 0.011048699438982425) = 0.01821492393489977
+  - Node 15: (0.15000000000000002/17) + (0.85 * 0.026489094160997127) = 0.03133925944861227
+
+
+Iterasi 8:
+  - Node 0: (0.15000000000000002/17) + (0.85 * 0.10240436388377111) = 0.09586723871297015
+  - Node 3: (0.15000000000000002/17) + (0.85 * 0.03566313098590923) = 0.039137190749787554
+  - Node 4: (0.15000000000000002/17) + (0.85 * 0.08340851818144084) = 0.07972076986598942
+  - Node 5: (0.15000000000000002/17) + (0.85 * 0.05491050120922414) = 0.05549745543960523
+  - Node 8: (0.15000000000000002/17) + (0.85 * 0.043769041987164185) = 0.046027215100854266
+  - Node 9: (0.15000000000000002/17) + (0.85 * 0.08221341973450919) = 0.0787049361860975
+  - Node 11: (0.15000000000000002/17) + (0.85 * 0.052839716605064355) = 0.05373728852606941
+  - Node 12: (0.15000000000000002/17) + (0.85 * 0.07218612549465823) = 0.07018173608222421
+  - Node 13: (0.15000000000000002/17) + (0.85 * 0.10134485325469433) = 0.09496665467825488
+  - Node 14: (0.15000000000000002/17) + (0.85 * 0.05483769482351357) = 0.05543557001175124
+  - Node 16: (0.15000000000000002/17) + (0.85 * 0.1017540194475952) = 0.09531444594222062
+  - Node 17: (0.15000000000000002/17) + (0.85 * 0.046736422838151014) = 0.04854948882419307
+  - Node 1: (0.15000000000000002/17) + (0.85 * 0.0519872171720711) = 0.053012664008025144
+  - Node 2: (0.15000000000000002/17) + (0.85 * 0.03909924597490937) = 0.04205788849043768
+  - Node 10: (0.15000000000000002/17) + (0.85 * 0.03909924597490937) = 0.04205788849043768
+  - Node 7: (0.15000000000000002/17) + (0.85 * 0.011139049069313102) = 0.018291721120680844
+  - Node 15: (0.15000000000000002/17) + (0.85 * 0.02660743336310161) = 0.031439847770401076
+
+
+Iterasi 9:
+  - Node 0: (0.15000000000000002/17) + (0.85 * 0.10253179432057165) = 0.0959755545842506
+  - Node 3: (0.15000000000000002/17) + (0.85 * 0.03573468193674065) = 0.039198009057994254
+  - Node 4: (0.15000000000000002/17) + (0.85 * 0.08347379373647983) = 0.07977625408777256
+  - Node 5: (0.15000000000000002/17) + (0.85 * 0.05507135119114914) = 0.05563417792424148
+  - Node 8: (0.15000000000000002/17) + (0.85 * 0.043854077824661206) = 0.04609949556272673
+  - Node 9: (0.15000000000000002/17) + (0.85 * 0.08238826764695999) = 0.0788535569116807
+  - Node 11: (0.15000000000000002/17) + (0.85 * 0.05296116940893043) = 0.05384052340935557
+  - Node 12: (0.15000000000000002/17) + (0.85 * 0.07235123038566141) = 0.0703220752395769
+  - Node 13: (0.15000000000000002/17) + (0.85 * 0.10125956260026638) = 0.09489415762199112
+  - Node 14: (0.15000000000000002/17) + (0.85 * 0.054959624103107396) = 0.05553920989940599
+  - Node 16: (0.15000000000000002/17) + (0.85 * 0.10196250637770092) = 0.09549165983281048
+  - Node 17: (0.15000000000000002/17) + (0.85 * 0.04674902671649645) = 0.04856020212078669
+  - Node 1: (0.15000000000000002/17) + (0.85 * 0.051554553958263166) = 0.052644900276288396
+  - Node 2: (0.15000000000000002/17) + (0.85 * 0.03869983224789389) = 0.041718386822474515
+  - Node 10: (0.15000000000000002/17) + (0.85 * 0.03869983224789389) = 0.041718386822474515
+  - Node 7: (0.15000000000000002/17) + (0.85 * 0.011099491087921045) = 0.018258096836497595
+  - Node 15: (0.15000000000000002/17) + (0.85 * 0.026649204209302564) = 0.031475352989671884
+
+
+Iterasi 10:
+  - Node 0: (0.15000000000000002/17) + (0.85 * 0.1026745026449518) = 0.09609685665997374
+  - Node 3: (0.15000000000000002/17) + (0.85 * 0.03575955439572485) = 0.03921915064813083
+  - Node 4: (0.15000000000000002/17) + (0.85 * 0.08360358529302445) = 0.07988657691083548
+  - Node 5: (0.15000000000000002/17) + (0.85 * 0.05504863167157883) = 0.05561486633260671
+  - Node 8: (0.15000000000000002/17) + (0.85 * 0.043931296698244124) = 0.04616513160527221
+  - Node 9: (0.15000000000000002/17) + (0.85 * 0.0824914527945682) = 0.07894126428714766
+  - Node 11: (0.15000000000000002/17) + (0.85 * 0.05304180347453827) = 0.05390906236512224
+  - Node 12: (0.15000000000000002/17) + (0.85 * 0.07242642082417353) = 0.0703859871123122
+  - Node 13: (0.15000000000000002/17) + (0.85 * 0.10126511771082759) = 0.09489887946596816
+  - Node 14: (0.15000000000000002/17) + (0.85 * 0.055012845049135554) = 0.05558444770352993
+  - Node 16: (0.15000000000000002/17) + (0.85 * 0.10208344182194323) = 0.09559445496041645
+  - Node 17: (0.15000000000000002/17) + (0.85 * 0.04681262115354553) = 0.048614257392278405
+  - Node 1: (0.15000000000000002/17) + (0.85 * 0.051207802584673626) = 0.05235016160873729
+  - Node 2: (0.15000000000000002/17) + (0.85 * 0.03840749350333339) = 0.04146989888959809
+  - Node 10: (0.15000000000000002/17) + (0.85 * 0.03840749350333339) = 0.04146989888959809
+  - Node 7: (0.15000000000000002/17) + (0.85 * 0.011126835584848296) = 0.01828133965888576
+  - Node 15: (0.15000000000000002/17) + (0.85 * 0.026699101291555366) = 0.031517765509586765
+
+
+Hasil Akhir PageRank (Diurutkan):
+Node 0: 0.09609685665997374
+Node 16: 0.09559445496041645
+Node 13: 0.09489887946596816
+Node 4: 0.07988657691083548
+Node 9: 0.07894126428714766
+Node 12: 0.0703859871123122
+Node 5: 0.05561486633260671
+Node 14: 0.05558444770352993
+Node 11: 0.05390906236512224
+Node 1: 0.05235016160873729
+Node 17: 0.048614257392278405
+Node 8: 0.04616513160527221
+Node 2: 0.04146989888959809
+Node 10: 0.04146989888959809
+Node 3: 0.03921915064813083
+Node 15: 0.031517765509586765
+Node 7: 0.01828133965888576
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Node Tertinggi dengan Kalimat:&quot;</span><span class="p">)</span>
@@ -2247,13 +3600,13 @@ Node 6: 0.0087
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node Tertinggi dengan Kalimat:
-Node 0: PageRank = 0.0956
+Node 0: PageRank = 0.0961
 Kalimat: Bacawapres Gibran Rakabuming Rakabertemu dengan Anies Baswedan dan Muhaimin Iskandar (Cak Imin) di acara Haul Al Habib Ali bin Muhammad Al Habsyi di Masjid Riyadh, Solo.
 
-Node 16: PageRank = 0.0951
+Node 16: PageRank = 0.0956
 Kalimat: Gibran terlihat duduk di sebelah kanan dari posisi Anies dan Cak Imin.
 
-Node 13: PageRank = 0.0940
+Node 13: PageRank = 0.0949
 Kalimat: Keduanya sampai di lokasi pukul 07.00 WIB.Sementara Gibran, baru tampak menghadiri acara pada pukul 10.30 WIB.
 </pre></div>
 </div>
@@ -2293,7 +3646,6 @@ Node 1: 0.0446
 Node 7: 0.0212
 Node 2: 0.0066
 Node 10: 0.0066
-Node 6: 0.0000
 </pre></div>
 </div>
 </div>
@@ -2356,7 +3708,6 @@ Node 1: 0.0446
 Node 7: 0.0212
 Node 2: 0.0066
 Node 10: 0.0066
-Node 6: 0.0000
 </pre></div>
 </div>
 </div>
@@ -2415,7 +3766,7 @@ Kalimat: Disamperin saja Pak Anies masih di dalam,&quot; tutur Gibran kepada war
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="Tugas_2.html"
@@ -2451,10 +3802,18 @@ Kalimat: Disamperin saja Pak Anies masih di dalam,&quot; tutur Gibran kepada war
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Meringkas Dokumen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#crawling-web-dari-detik-com">CRAWLING WEB Dari DETIK.COM</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#search-kalimat-penting-dalam-berita">Search Kalimat penting Dalam Berita</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf-dalam-kalimat-dan-cosinsemiliarity">TF - IDF Dalam Kalimat dan cosinsemiliarity</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-similarit">Cosine Similarit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-tf-idf">Formula TF-IDF</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-similarity">Cosine Similarity</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-cosim">Formula Cosim</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#graph">Graph</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closenes-centrality">Closenes Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-page-rank">FORMULA PAGE RANK</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-exel">Perhitungan EXEL</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-pagerank">Code Pagerank</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hitungan-manual-untuk-pgerank">Hitungan Manual Untuk PgeRank</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-centrality">Eigenvector Centrality</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalue-centrality">Eigenvalue Centrality</a></li>
 </ul>
@@ -2479,6 +3838,7 @@ By Muflikhatin Nisaadah
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -2505,8 +3865,8 @@ By Muflikhatin Nisaadah
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
