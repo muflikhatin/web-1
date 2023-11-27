@@ -583,60 +583,39 @@ yaitu</p>
 <span class="g g-Whitespace">    </span><span class="mi">793</span><span class="s2">                 method,</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_make_request</span><span class="nt">(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)</span>
-<span class="g g-Whitespace">    </span><span class="mi">535</span><span class="s2">         # Receive the response from the server</span>
-<span class="g g-Whitespace">    </span><span class="mi">536</span><span class="s2">         try:</span>
-<span class="ne">--&gt; </span><span class="mi">537</span><span class="s2">             response = conn.getresponse()</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span><span class="s2">         except (BaseSSLError, OSError) as e:</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span><span class="s2">             self._raise_timeout(err=e, url=url, timeout_value=read_timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="s2">             # Trigger any extra validation we need to do.</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span><span class="s2">             try:</span>
+<span class="ne">--&gt; </span><span class="mi">468</span><span class="s2">                 self._validate_conn(conn)</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="s2">             except (SocketTimeout, BaseSSLError) as e:</span>
+<span class="g g-Whitespace">    </span><span class="mi">470</span><span class="s2">                 self._raise_timeout(err=e, url=url, timeout_value=conn.timeout)</span>
 
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connection.py</span> in <span class="ni">getresponse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">459</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span><span class="s2">         # Get the response from http.client.HTTPConnection</span>
-<span class="ne">--&gt; </span><span class="mi">461</span><span class="s2">         httplib_response = super().getresponse()</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span><span class="s2">         try:</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_validate_conn</span><span class="nt">(self, conn)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1095</span><span class="s2">         # Force connect early to allow us to validate the connection.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1096</span><span class="s2">         if conn.is_closed:</span>
+<span class="ne">-&gt; </span><span class="mi">1097</span><span class="s2">             conn.connect()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1098</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1099</span><span class="s2">         if not conn.is_verified:</span>
 
-<span class="nn">/usr/lib/python3.10/http/client.py</span> in <span class="ni">getresponse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1373</span><span class="s2">         try:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1374</span><span class="s2">             try:</span>
-<span class="ne">-&gt; </span><span class="mi">1375</span><span class="s2">                 response.begin()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1376</span><span class="s2">             except ConnectionError:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1377</span><span class="s2">                 self.close()</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connection.py</span> in <span class="ni">connect</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">640</span><span class="s2">             )</span>
+<span class="g g-Whitespace">    </span><span class="mi">641</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">642</span><span class="s2">         sock_and_verified = _ssl_wrap_socket_and_match_hostname(</span>
+<span class="g g-Whitespace">    </span><span class="mi">643</span><span class="s2">             sock=sock,</span>
+<span class="g g-Whitespace">    </span><span class="mi">644</span><span class="s2">             cert_reqs=self.cert_reqs,</span>
 
-<span class="nn">/usr/lib/python3.10/http/client.py</span> in <span class="ni">begin</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">316</span><span class="s2">         # read until we get a non-100 response</span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span><span class="s2">         while True:</span>
-<span class="ne">--&gt; </span><span class="mi">318</span><span class="s2">             version, status, reason = self._read_status()</span>
-<span class="g g-Whitespace">    </span><span class="mi">319</span><span class="s2">             if status != CONTINUE:</span>
-<span class="g g-Whitespace">    </span><span class="mi">320</span><span class="s2">                 break</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connection.py</span> in <span class="ni">_ssl_wrap_socket_and_match_hostname</span><span class="nt">(sock, cert_reqs, ssl_version, ssl_minimum_version, ssl_maximum_version, cert_file, key_file, key_password, ca_certs, ca_cert_dir, ca_cert_data, assert_hostname, assert_fingerprint, server_hostname, ssl_context, tls_in_tls)</span>
+<span class="g g-Whitespace">    </span><span class="mi">781</span><span class="s2">             server_hostname = normalized</span>
+<span class="g g-Whitespace">    </span><span class="mi">782</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">783</span><span class="s2">     ssl_sock = ssl_wrap_socket(</span>
+<span class="g g-Whitespace">    </span><span class="mi">784</span><span class="s2">         sock=sock,</span>
+<span class="g g-Whitespace">    </span><span class="mi">785</span><span class="s2">         keyfile=key_file,</span>
 
-<span class="nn">/usr/lib/python3.10/http/client.py</span> in <span class="ni">_read_status</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span><span class="s2">     def _read_status(self):</span>
-<span class="ne">--&gt; </span><span class="mi">279</span><span class="s2">         line = str(self.fp.readline(_MAXLINE + 1), &quot;iso-8859-1&quot;)</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span><span class="s2">         if len(line) &gt; _MAXLINE:</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span><span class="s2">             raise LineTooLong(&quot;status line&quot;)</span>
-
-<span class="nn">/usr/lib/python3.10/socket.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span><span class="s2">         while True:</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span><span class="s2">             try:</span>
-<span class="ne">--&gt; </span><span class="mi">705</span><span class="s2">                 return self._sock.recv_into(b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span><span class="s2">             except timeout:</span>
-<span class="g g-Whitespace">    </span><span class="mi">707</span><span class="s2">                 self._timeout_occurred = True</span>
-
-<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1272</span><span class="s2">                   &quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot; %</span>
-<span class="g g-Whitespace">   </span><span class="mi">1273</span><span class="s2">                   self.__class__)</span>
-<span class="ne">-&gt; </span><span class="mi">1274</span><span class="s2">             return self.read(nbytes, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1275</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1276</span><span class="s2">             return super().recv_into(buffer, nbytes, flags)</span>
-
-<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1128</span><span class="s2">         try:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1129</span><span class="s2">             if buffer is not None:</span>
-<span class="ne">-&gt; </span><span class="mi">1130</span><span class="s2">                 return self._sslobj.read(len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1131</span><span class="s2">             else:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1132</span><span class="s2">                 return self._sslobj.read(len)</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/util/ssl_.py</span> in <span class="ni">ssl_wrap_socket</span><span class="nt">(sock, keyfile, certfile, cert_reqs, ca_certs, server_hostname, ssl_version, ciphers, ssl_context, ca_cert_dir, key_password, ca_cert_data, tls_in_tls)</span>
+<span class="g g-Whitespace">    </span><span class="mi">444</span><span class="s2">     if ca_certs or ca_cert_dir or ca_cert_data:</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span><span class="s2">         try:</span>
+<span class="ne">--&gt; </span><span class="mi">446</span><span class="s2">             context.load_verify_locations(ca_certs, ca_cert_dir, ca_cert_data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span><span class="s2">         except OSError as e:</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span><span class="s2">             raise SSLError(e) from e</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -2304,13 +2283,16 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">file</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/UAS_PPW/tugas/hitungan_manual_pagerank.xlsx&#39;</span><span class="p">)</span>
+<span class="c1"># Mengganti nilai NaN dengan spasi</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="c1"># Menampilkan DataFrame yang telah diubah</span>
 <span class="n">file</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-8b8cf0c5-8c0e-4f67-9af5-144925dde0c1" class="colab-df-container">
+  <div id="df-43486610-3c56-4ae1-96ab-651dd6c21dc9" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2353,51 +2335,51 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
   <tbody>
     <tr>
       <th>0</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>1</th>
       <td>Jumlah Iterasi</td>
       <td>Jumlah Node</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>2</th>
-      <td>NaN</td>
+      <td></td>
       <td>0</td>
       <td>1</td>
       <td>2</td>
@@ -2407,15 +2389,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>6</td>
       <td>7</td>
       <td>8</td>
-      <td>9.000000</td>
-      <td>10.000000</td>
+      <td>9.0</td>
+      <td>10.0</td>
       <td>11</td>
-      <td>12.000000</td>
-      <td>13.000000</td>
-      <td>14.000000</td>
-      <td>15.000000</td>
-      <td>16.000000</td>
-      <td>17.000000</td>
+      <td>12.0</td>
+      <td>13.0</td>
+      <td>14.0</td>
+      <td>15.0</td>
+      <td>16.0</td>
+      <td>17.0</td>
     </tr>
     <tr>
       <th>3</th>
@@ -2452,7 +2434,7 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.018824</td>
       <td>0.038053</td>
       <td>0.086942</td>
-      <td>0.050490</td>
+      <td>0.05049</td>
       <td>0.045276</td>
       <td>0.062359</td>
       <td>0.092776</td>
@@ -2464,46 +2446,46 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
     <tr>
       <th>5</th>
       <td>Iterasi 2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>6</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>7</th>
@@ -2517,37 +2499,37 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>Iterasi 1</td>
       <td>Langkah 3  Iterasi 2</td>
       <td>Iterasi 2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>8</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>9</th>
@@ -2561,15 +2543,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.094897</td>
       <td>0.099516</td>
       <td>0.098823</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>10</th>
@@ -2583,15 +2565,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.063824</td>
       <td>0.059768</td>
       <td>0.060376</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>11</th>
@@ -2605,15 +2587,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.05049</td>
       <td>0.04652</td>
       <td>0.047115</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>12</th>
@@ -2627,15 +2609,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.02847</td>
       <td>0.035347</td>
       <td>0.034316</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>13</th>
@@ -2649,15 +2631,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.073887</td>
       <td>0.08449</td>
       <td>0.082899</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>14</th>
@@ -2671,37 +2653,37 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.083925</td>
       <td>0.052771</td>
       <td>0.057444</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>15</th>
       <td>6</td>
       <td>0</td>
       <td>0</td>
-      <td>NaN</td>
+      <td></td>
       <td>0.15</td>
       <td>0.058824</td>
-      <td>NaN</td>
+      <td></td>
       <td>0.008824</td>
-      <td>NaN</td>
+      <td></td>
       <td>0.001324</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
       <td>KETERANGAN: - ( PR(u) ) adalah PageRank dari h...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>16</th>
@@ -2715,15 +2697,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.018824</td>
       <td>0.016785</td>
       <td>0.017091</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>17</th>
@@ -2737,15 +2719,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.038053</td>
       <td>0.042861</td>
       <td>0.04214</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>18</th>
@@ -2759,15 +2741,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.086942</td>
       <td>0.101025</td>
       <td>0.098913</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>19</th>
@@ -2781,15 +2763,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.05049</td>
       <td>0.04652</td>
       <td>0.047115</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>20</th>
@@ -2803,15 +2785,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.045276</td>
       <td>0.051135</td>
       <td>0.050256</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>21</th>
@@ -2825,15 +2807,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.062359</td>
       <td>0.067997</td>
       <td>0.067151</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>22</th>
@@ -2847,15 +2829,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.092776</td>
       <td>0.104983</td>
       <td>0.103152</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>23</th>
@@ -2869,15 +2851,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.050692</td>
       <td>0.054093</td>
       <td>0.053583</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>24</th>
@@ -2891,15 +2873,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.027258</td>
       <td>0.027342</td>
       <td>0.027329</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>25</th>
@@ -2913,15 +2895,15 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.101563</td>
       <td>0.091211</td>
       <td>0.092764</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>26</th>
@@ -2935,37 +2917,37 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <td>0.039164</td>
       <td>0.051717</td>
       <td>0.049834</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th>27</th>
       <td>17</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
   </tbody>
 </table>
@@ -2973,7 +2955,7 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-8b8cf0c5-8c0e-4f67-9af5-144925dde0c1')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-43486610-3c56-4ae1-96ab-651dd6c21dc9')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -3025,12 +3007,12 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
 
     <script>
       const buttonEl =
-        document.querySelector('#df-8b8cf0c5-8c0e-4f67-9af5-144925dde0c1 button.colab-df-convert');
+        document.querySelector('#df-43486610-3c56-4ae1-96ab-651dd6c21dc9 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-8b8cf0c5-8c0e-4f67-9af5-144925dde0c1');
+        const element = document.querySelector('#df-43486610-3c56-4ae1-96ab-651dd6c21dc9');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3050,8 +3032,8 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
   </div>
 
 
-<div id="df-03a17609-d645-4cfe-a588-26bee8afc375">
-  <button class="colab-df-quickchart" onclick="quickchart('df-03a17609-d645-4cfe-a588-26bee8afc375')"
+<div id="df-8bec8138-2742-4d24-b9e7-3db20afb1a99">
+  <button class="colab-df-quickchart" onclick="quickchart('df-8bec8138-2742-4d24-b9e7-3db20afb1a99')"
             title="Suggest charts"
             style="display:none;">
 
@@ -3170,7 +3152,7 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-03a17609-d645-4cfe-a588-26bee8afc375 button');
+        document.querySelector('#df-8bec8138-2742-4d24-b9e7-3db20afb1a99 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
