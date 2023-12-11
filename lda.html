@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lda';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -187,9 +189,14 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="Skip_Gram.html">Crawling Baru PTA</a></li>
 
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">TOPIK MODELING</a></li>
+
 
 
 
@@ -424,6 +431,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lda-berdasarkan-label-rpl-dan-komputasi">LDA Berdasarkan Label RPL dan Komputasi</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#menggunakan-tf-idf">Menggunakan TF-IDF</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#menggunakan-knn">Menggunakan KNN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formula">Formula</a></li>
 </ul>
 
             </nav>
@@ -1544,6 +1552,19 @@ zâ       0.557059  0.022949  0.419992                  1.0
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="menggunakan-knn">
 <h1>Menggunakan KNN<a class="headerlink" href="#menggunakan-knn" title="Permalink to this heading">#</a></h1>
+<p>K-Nearest Neighbors (KNN) adalah algoritma supervisi yang digunakan dalam machine learning untuk memprediksi nilai atau label data baru berdasarkan kemiripan dengan data yang ada dalam training set</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="formula">
+<h1>Formula<a class="headerlink" href="#formula" title="Permalink to this heading">#</a></h1>
+<p>jarak euclidean
+$<span class="math notranslate nohighlight">\(
+\text{distance}(x, X_i) = \sqrt[n]{\overset{d}{\sum_{j=1}}(x_j - X_{ij})^2}
+\)</span>$</p>
+<p>Jarak manhattan</p>
+<div class="math notranslate nohighlight">
+\[
+d(x,y) =\sum_{v∈Bu}|xi - yi|
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Path menuju file &quot;Label.xlsx&quot; di Drive UAS_PPW/tugas</span>
@@ -1711,6 +1732,7 @@ Classification Report:
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lda-berdasarkan-label-rpl-dan-komputasi">LDA Berdasarkan Label RPL dan Komputasi</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#menggunakan-tf-idf">Menggunakan TF-IDF</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#menggunakan-knn">Menggunakan KNN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formula">Formula</a></li>
 </ul>
 
   </nav></div>
