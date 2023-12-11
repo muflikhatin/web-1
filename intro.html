@@ -198,6 +198,13 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="K_means.html">K- Means dengan TF - IDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="klasifikasi_SVM.html">PREPROCESSING</a></li>
+
+
+
+
+
+
 </ul>
 
     </div>
@@ -399,120 +406,6 @@ document.write(`
 <h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="https://luszngcpbgycfvx8oqwkcv.streamlit.app/">https://luszngcpbgycfvx8oqwkcv.streamlit.app/</a></p>
 <p><a class="reference external" href="https://muflikhatin.github.io/web-1/intro.html">https://muflikhatin.github.io/web-1/intro.html</a></p>
-<p>BOOK LAPORAN PPW</p>
-<p>Pastikan dalam editor sudah terinstall library yang dibutuhkan yaitu dengan menjalankan perintah  pip install name_lybrary di editor masing – masing :</p>
-<blockquote>
-<div><blockquote>
-<div><p>untuk crawling data dari web yang akan kita gunakan</p>
-</div></blockquote>
-</div></blockquote>
-<p>Dalam Materi Kali ini kita akan mengulas tentang :</p>
-<ol class="arabic simple">
-<li><p>Ekstraksi Kalimat dalam bentuk (token sentences)</p></li>
-<li><p>TF – IDF</p></li>
-<li><p>Cosinus Semiliarity</p></li>
-<li><p>Graph</p></li>
-<li><p>Menghitung Closeness Centrality, Menentukan PageRank, Eigenvector Centrality</p></li>
-</ol>
-<p>Ekstraksi Kalimat dalam bentuk (token sentences)
-Langkah pertama yang perlu kita lakukan yaitu menggunakan kalimat sebagai ciri dari sebuah dokumen dimana data kalimat tersebut didapat dari crawling web berita <a class="reference external" href="http://deti.com">deti.com</a> dengan halaman berjumlah 1112 halaman untuk lebih jelasnya bisa kunjungi link berikut :
-<a class="reference external" href="https://esairina.medium.com/scraping-berita-online-pada-situs-detik-com-menggunakan-google-colab-3a764981384b">https://esairina.medium.com/scraping-berita-online-pada-situs-detik-com-menggunakan-google-colab-3a764981384b</a></p>
-<p>TF-IDF AND COSINUS SIMILARITY
-Tahapa Proses Perangkingan</p>
-<ol class="arabic simple">
-<li><p>Preproces Dokumen</p></li>
-</ol>
-<p>a.	Token Dokumen
-1.A. TOKEN DOKUMEN
-• D1: Universitas // Trunojoyo // tahun // ini // akan // milad // ke // 10
-• D2: Informatika // Trunojoyo // satu-satunya // yang // terakreditasi // A // di // Universitas // Trunojoyo • D3: Mahasiswa // informatika // sedang demo // di // laboratorium</p>
-<p>b.	Menghapus Stopword
-1.B. MENGHAPUS STOPWORD
-• D1: Universitas // Trunojoyo // tahun // ini // akan // milad // ke // 21
-• D2: Informatika // Trunojoyo // satu-satunya // yang // terakreditasi // A // di // Universitas // Trunojoyo • D3: Mahasiswa // informatika // sedang demo // di // laboratorium</p>
-<p>c.	Menentukan Term untuk Sentences
-1.C. MENENTUKAN TERM</p>
-<p>• D1: Universitas // Trunojoyo // tahun // milad • D2: Informatika // Trunojoyo // terakreditasi // Universitas // Trunojoyo
-• D3: Mahasiswa // informatika // demo // laboratorium • Kata Kunci (KK): Universitas Trunojoyo
-1.C. MENENTUKAN TERM
-• D1: Universitas // Trunojoyo // tahun // milad • D2: Informatika // Trunojoyo // terakreditasi // Universitas // Trunojoyo
-• D3: Mahasiswa // informatika // demo //  laboratorium
-• Kata Kunci (KK): Universitas Trunojoyo • Pilih unik term dan urutkan secara ascending</p>
-<ol class="arabic simple" start="2">
-<li><p>Hitung TF-IDF
-MAPPING TERM DAN FREQUENSINYA
-Memasukkan nilai frekuensi term (tf) yaitu jumlah kemunculan term dalam masing-masing dokumen</p></li>
-</ol>
-<p>• D1: Universitas //<br />
-Trunojoyo // tahun // milad
-• D2: Informatika //
-Trunojoyo // terakreditasi // Universitas // Trunojoyo • D3: Mahasiswa //
-informatika // demo //  laboratorium
-• Kata Kunci (KK):<br />
-Universitas Trunojoyo</p>
-<p>MENGHITUNG DOKUMEN FREKUENSI (DF)
-Df adalah jumlah dokumen yang didalamnya memuat term tertentu</p>
-<p>MENGHITUNG NILAI TF DAN IDF
-• idf = log (D/df)
-– D = Jumlah Dokumen yang di perbandingkan
-• Wdt = tf * Idf</p>
-<p>RANGKING berdasarkan TF-IDF
-• D2 = 0,352 + 0.176 = 0,528 • D1 = 0,176 + 0,176 = 0,352 • D3 = 0.000 + 0.000 = 0,000</p>
-<p>• Dari nilai tf-idf ini dapat disimpulkan bahwa D2 memiliki kesamaan paling tinggi kemudian D1. serta D3 tidak memiliki nilai kesamaan</p>
-<ol class="arabic simple" start="3">
-<li><p>Hitung Cosinus Similarity
-Vector Space Model
-• Menghitung nilai cosinus sudut dari 2 vector yaitu W dari dokumen dengan W dari kata kunci</p></li>
-</ol>
-<p>Menghitung Wij* Wiq
-• Melakukan perkalian skalar nilai
-– Wkk (W kata Kunci) dengan – Wdi (W dokumen ke i)</p>
-<p>Term 	Wdt = tf*Idf 		Wqj * Wdj
-KK 	D1 	D2 	D3 		D1 	D2 	D3
-Demo 	0.000 	0.000 	0.000 	0.477 		0.000 	0.000 	0.000
-Informatika 	0.000 	0.000 	0.176 	0.176 		0.000 	0.000 	0.000
-Laboraturium 	0.000 	0.000 	0.000 	0.477 		0.000 	0.000 	0.000
-Mahasiswa 	0.000 	0.000 	0.000 	0.477 		0.000 	0.000 	0.000
-Milad 	0.000 	0.477 	0.000 	0.000 		0.000 	0.000 	0.000
-Tahun 	0.000 	0.477 	0.000 	0.000 		0.000 	0.000 	0.000
-Terakreditasi 	0.000 	0.000 	0.477 	0.000 		0.000 	0.000 	0.000
-Trunojoyo 	0.176 	0.176 	0.352 	0.000 		0.031 	0.062 	0.000
-Universitas 	0.176 	0.176 	0.176 	0.000 		0.031 	0.031 	0.000</p>
-<p>Menghitung ∑ Wij* Wiq
-Nilai – ∑ Wd1<em>Wkk = 0,062 – ∑ Wd2</em>Wkk = 0,093 – ∑ Wd3*Wkk = 0,000</p>
-<p>Term 	Wqj * Wdj
-D1 	D2 	D3
-Demo 	0.000 	0.000 	0.000
-Informatika 	0.000 	0.000 	0.000
-Laboraturium 	0.000 	0.000 	0.000
-Mahasiswa 	0.000 	0.000 	0.000
-Milad 	0.000 	0.000 	0.000
-Tahun 	0.000 	0.000 	0.000
-Terakreditasi 	0.000 	0.000 	0.000
-Trunojoyo 	0.031 	0.062 	0.000
-Universitas 	0.031 	0.031 	0.000
-0.062 	0.093 	0.000</p>
-<p>Menghitung √∑Wij 2 * √∑Wiq 2
-• Nilai Wdt Dipangkatkan 2 • Hitung jumlah(sigma) masing2 Di dan Kk • Mengakar pangkat 2 Hasil Sigma Di dan Kk</p>
-<p>Term 	Wdt = tf*Idf 	Panjang Vector
-KK 	D1 	D2 	D3 	KK 	D1 	D2 	D3
-Demo 	0.000 	0.000 	0.000 	0.477 	0.000 	0.000 	0.000 	0.228
-Informatika 	0.000 	0.000 	0.176 	0.176 	0.000 	0.000 	0.031 	0.031
-Laboraturium 	0.000 	0.000 	0.000 	0.477 	0.000 	0.000 	0.000 	0.228
-Mahasiswa 	0.000 	0.000 	0.000 	0.477 	0.000 	0.000 	0.000 	0.228
-Milad 	0.000 	0.477 	0.000 	0.000 	0.000 	0.228 	0.000 	0.000
-Tahun 	0.000 	0.477 	0.000 	0.000 	0.000 	0.228 	0.000 	0.000
-Terakreditasi 	0.000 	0.000 	0.477 	0.000 	0.000 	0.000 	0.228 	0.000
-Trunojoyo 	0.176 	0.176 	0.352 	0.000 	0.031 	0.031 	0.124 	0.000
-Universitas 	0.176 	0.176 	0.176 	0.000 	0.031 	0.031 	0.031 	0.000
-0.062 	0.517 	0.414 	0.714
-0.249 	0.719 	0.643 	0.845</p>
-<p>Rumus TF-IDF dan Cossim</p>
-<p>Mendapatkan nilai CosSim()
-• Cossim(Q,D1) = 0,062 / (0,249<em>0,719) = 0,3462 • Cossim(Q,D2) = 0,093 / (0,249</em>0,643) = 0,5808 • Cossim(Q,D3) = 0,000 / (0,249*0,845) = 0</p>
-<p>Menentukan Kesamaan
-• Cossim(Q,D2) = 0,5808 • Cossim(Q,D1) = 0,3462 • Cossim(Q,D3) = 0
-• Dari nilai diatas yang dianggap mirip adalah yg memiliki nilai cossim mendekati nilai 1 (dalam hal contoh soal adalah D2)</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>

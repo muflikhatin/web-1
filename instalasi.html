@@ -197,6 +197,13 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="K_means.html">K- Means dengan TF - IDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="klasifikasi_SVM.html">PREPROCESSING</a></li>
+
+
+
+
+
+
 </ul>
 
     </div>
@@ -652,12 +659,10 @@ Using jupyter-cache at: /content/drive/MyDrive/UAS_PPW/tugas/_build/.jupyter_cac
 /content/drive/MyDrive/UAS_PPW/tugas/instalasi.ipynb: WARNING: Executing notebook failed: CellTimeoutError [mystnb.exec]
 /content/drive/MyDrive/UAS_PPW/tugas/instalasi.ipynb: WARNING: Notebook exception traceback saved in: /content/drive/MyDrive/UAS_PPW/tugas/_build/html/reports/instalasi.err.log [mystnb.exec]
 /content/drive/MyDrive/UAS_PPW/tugas/intro.md:: WARNING: toctree contains reference to nonexisting document &#39;LDA_KNN_KMEANS&#39; [etoc.ref]
-/content/drive/MyDrive/UAS_PPW/tugas/intro.md:: WARNING: toctree contains reference to nonexisting document &#39;klasivikasi_SVM&#39; [etoc.ref]
 <span class=" -Color -Color-Bold">looking for now-outdated files... </span>none found
 <span class=" -Color -Color-Bold">pickling environment... </span>done
 <span class=" -Color -Color-Bold">checking consistency... </span>/content/drive/MyDrive/UAS_PPW/tugas/LDA__KNN__KMEANS.ipynb: WARNING: document isn&#39;t included in any toctree
 /content/drive/MyDrive/UAS_PPW/tugas/instalasi.ipynb: WARNING: document isn&#39;t included in any toctree
-/content/drive/MyDrive/UAS_PPW/tugas/klasifikasi_SVM.ipynb: WARNING: document isn&#39;t included in any toctree
 /content/drive/MyDrive/UAS_PPW/tugas/markdown.md: WARNING: document isn&#39;t included in any toctree
 /content/drive/MyDrive/UAS_PPW/tugas/markdown-notebooks.md: WARNING: document isn&#39;t included in any toctree
 /content/drive/MyDrive/UAS_PPW/tugas/notebooks.ipynb: WARNING: document isn&#39;t included in any toctree
@@ -670,7 +675,7 @@ done
 <span class=" -Color -Color-Bold">copying extra files... </span>done
 <span class=" -Color -Color-Bold">dumping search index in English (code: en)... </span>done
 <span class=" -Color -Color-Bold">dumping object inventory... </span>done
-<span class=" -Color -Color-Bold">build succeeded, 10 warnings.</span>
+<span class=" -Color -Color-Bold">build succeeded, 8 warnings.</span>
 
 The HTML pages are in tugas/_build/html.
 
@@ -725,7 +730,7 @@ Or paste this line directly into your browser bar:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_token</span><span class="o">=</span><span class="s1">&#39;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&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_token</span><span class="o">=</span><span class="s1">&#39;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&#39;</span>
 <span class="n">repository</span><span class="o">=</span><span class="s1">&#39;web-1&#39;</span>
 <span class="n">username</span><span class="o">=</span><span class="s1">&#39;muflikhatin&#39;</span>
 </pre></div>
@@ -742,7 +747,7 @@ Or paste this line directly into your browser bar:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>https://muflikhatin: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@github.com/muflikhatin/web-1.git
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>https://muflikhatin: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@github.com/muflikhatin/web-1.git
 </pre></div>
 </div>
 </div>
@@ -754,15 +759,15 @@ Or paste this line directly into your browser bar:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>origin	https://muflikhatin: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@github.com/muflikhatin/web-1.git (fetch)
-origin	https://muflikhatin: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@github.com/muflikhatin/web-1.git (push)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>origin	https://muflikhatin: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@github.com/muflikhatin/web-1.git (fetch)
+origin	https://muflikhatin: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@github.com/muflikhatin/web-1.git (push)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://muflikhatin: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@github.com/muflikhatin/web-1.git
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://muflikhatin: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@github.com/muflikhatin/web-1.git
 </pre></div>
 </div>
 </div>
@@ -789,7 +794,7 @@ core.repositoryformatversion=0
 core.filemode=true
 core.bare=false
 core.logallrefupdates=true
-remote.origin.url=https://muflikhatin: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@github.com/muflikhatin/web-1.git
+remote.origin.url=https://muflikhatin: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@github.com/muflikhatin/web-1.git
 remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
 </pre></div>
 </div>
@@ -856,6 +861,7 @@ Using jupyter-cache at: /content/drive/MyDrive/UAS_PPW/tugas/_build/.jupyter_cac
 /content/drive/MyDrive/UAS_PPW/tugas/ScrapeDataUTM.ipynb: Executing notebook using local CWD [mystnb]
 /content/drive/MyDrive/UAS_PPW/tugas/Skip_Gram.ipynb: Executing notebook using local CWD [mystnb]
 /content/drive/MyDrive/UAS_PPW/tugas/Tugas_2.ipynb: Executing notebook using local CWD [mystnb]
+/content/drive/MyDrive/UAS_PPW/tugas/closeness_centrality.ipynb: Executing notebook using local CWD [mystnb]
 </pre></div>
 </div>
 </div>
